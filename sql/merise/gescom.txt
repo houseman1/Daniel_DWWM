@@ -40,6 +40,8 @@
 34. emp_address         employee address
 35. emp_dept            employee department
 
+36. pro_sub_cat         product sub-category
+
 
 catégorie               category
 produit                 product
