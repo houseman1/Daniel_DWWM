@@ -1,0 +1,33 @@
+vehicles
+    veh_registration  (numéro d'immatriculation)  
+    veh_make
+    veh_colour
+    veh_name
+    veh_pf  (puissance fiscal)
+
+ service history
+    service date
+    garage name
+    last_mot_date (contrôle technique - ministry of transport test (MOT) in England)
+    mot_due_date  (date limite)
+    num_of_owners (numéro de propriétaires)
+
+options_accessories
+    opt_name
+    opt_price
+
+customers
+    cus_surname
+    cus_first_name
+    cus_address
+
+pro_cust
+    company_name
+    pro_company
+    company_tel
+
+sales_reps (commercial)
+    rep_surname
+    rep_first_name
+    rep_tel  
+
