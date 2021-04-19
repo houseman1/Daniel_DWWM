@@ -1,0 +1,50 @@
+articles
+employes
+catégories
+traduction
+correcteurs
+validateurs
+internautes
+media
+mots-cles
+recherche
+commentaires
+
+articles
+    date de publication
+    date de modification
+    corps
+    titre
+
+employes
+    nom
+    prenom
+    role
+
+internautes
+    pseudos
+    mot de pass
+    email
+
+recherche
+    mot-cles
+
+traductions
+    langue
+
+media
+    type
+    nom
+    date de publication
+    date de modification
+    taille
+
+commentaires
+    texte
+    date de publication
+    date de validation
+
+catégories
+    nom
+    
+
