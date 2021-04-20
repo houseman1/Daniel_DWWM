@@ -54,8 +54,8 @@ CREATE TABLE vehicles (
     veh_make varchar(50),
     veh_col varchar(50),
     veh_pf int,
-    veh_price varchar(50),
     veh_age int,
+    veh_price decimal,
     id_customer int,
     PRIMARY KEY (id_vehicles),
     FOREIGN KEY (id_customer) REFERENCES customer(id_customer)
