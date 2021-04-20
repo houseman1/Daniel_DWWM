@@ -1,3 +1,5 @@
+DROP DATABASE oto;
+
 CREATE DATABASE oto;
 
 USE oto;
@@ -14,7 +16,7 @@ CREATE TABLE options_accessories (
     id_options_accessories int AUTO_INCREMENT NOT NULL,
     opt_name varchar(50),
     opt_price decimal,
-    PRIMARY KEY (id_options_accessories),
+    PRIMARY KEY (id_options_accessories)
 );
 
 CREATE TABLE sales_rep (
@@ -54,6 +56,7 @@ CREATE TABLE vehicles (
     veh_pf int,
     veh_price varchar(50),
     veh_age int,
+    id_customer int,
     PRIMARY KEY (id_vehicles),
     FOREIGN KEY (id_customer) REFERENCES customer(id_customer)
 );
