@@ -77,37 +77,37 @@ CREATE TABLE vehicles (
     FOREIGN KEY (id_options_accessories) REFERENCES options_accessories(id_options_accessories)
 );
 
-INSERT INTO customers
+INSERT INTO customer
     (cus_surname, cus_first_name, cus_address, id_options_accessories, id_sales_rep)
 VALUES 
     ('Houseman', 'Peter', '35 Naunton Lane',1 ,1),
     ('Cavel', 'Cathy', '2 rue du Moulin',2 ,2);
 
-INSERT INTO options_accessories,
+INSERT INTO options_accessories
     (opt_name, opt_price, id_customer, id_vehicles)
 VALUES 
     ('alloys', 200, 1, 1),
     ('sun-roof', 100, 2, 2);
 
-INSERT INTO pro_customer,
+INSERT INTO pro_customer
     (company_name, company_address, company_tel, id_customer)
 VALUES 
-    ('Peter Industries', 'Uranus', 01242 256731, 1),
-    ('Flowers R Us', 'Slack Pub, Cheltenham', 01242 793511, 2);
+    ('Peter Industries', 'Uranus', 01242256731, 1),
+    ('Flowers R Us', 'Slack Pub, Cheltenham', 01242793511, 2);
 
-INSERT INTO sales_rep,
+INSERT INTO sales_rep
     (rep_surname, rep_first_name, rep_tel, id_customer)
 VALUES 
-    ('Diamond', 'Nick', 01242 456123, 1),
-    ('Houseman', 'Sam', 01242 369852, 2);
+    ('Diamond', 'Nick', 01242456123, 1),
+    ('Houseman', 'Sam', 01242369852, 2);
 
-INSERT INTO service_history,
+INSERT INTO service_history
     (service_date, garage_name, last_mot_date, mot_due_date, number_of_owners, id_vehicles)
 VALUES 
-    ('7th March', 'VBF','11th April 2018', 3, 1),
-    ('8th March', 'Dodgy Garage', '12th April 2014', 9, 2);
+    ('7th March', 'VBF','11th April 2018', 3, 1, 1),
+    ('8th March', 'Dodgy Garage', '12th April 2014', 9, 2, 2);
 
-INSERT INTO vehicles,
+INSERT INTO vehicles
     (veh_name, veh_reg, veh_make, veh_col, veh_pf, veh_price, veh_age, id_customer, id_service_history, id_options_accessories)
 VALUES 
     ('Mégane', 'qs-12345-fg', 'Renault', 'blue', 7, 23000, 3, 1, 1, 1),
