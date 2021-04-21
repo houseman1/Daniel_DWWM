@@ -97,4 +97,46 @@ CREATE TABLE assigned (
 );
 
 
-INSERT INTO 
+INSERT INTO customer
+    (cus_surname, cus_first_name, cus_address, cus_tel, cus_company_name, cus_company_address, cus_company_tel)
+VALUES 
+    ('Houseman', 'Peter', '35 Naunton Lane', '0678912345' , 'Planet Co', '12 Uranus End', '0678912346'),
+    ('Cavel', 'Cathy', '2 rue du Moulin', '0678912347', 'Flowers Ltd', '3 rue du Moulin', '0678912348');
+
+
+
+INSERT INTO options_accessories
+    (opt_name, opt_price)
+VALUES 
+    ('alloys', 300),
+    ('sun-roof', 100);
+);
+
+
+
+
+INSERT INTO sales_rep
+    (rep_surname, rep_first_name, rep_tel)
+VALUES 
+    ('Diamond', 'Nick', '0678912350'),
+    ('Houseman', 'Sam', '0678912349');
+);
+
+
+
+INSERT INTO services
+    (ser_service_date, ser_price, id_orders, id_vehicles)
+VALUES 
+    ('7th March', 250, 1, 1),
+    ('8th March', 300, 2, 2);
+
+    
+
+
+
+INSERT INTO vehicles
+    (veh_name, veh_registration, veh_make, veh_colour, veh_pf, veh_age, veh_num_owners, veh_last_mot_date, veh_mot_due_date, veh_price)
+VALUES 
+    ('Mégane', 'qs-12345-fg', 'Renault', 'blue', 7, 1, 3, '2020-01-11', '2021-01-11', 30000),
+    ('Octavia', 'ml-98741-mp', 'Skoda', 'black', 8, 2, 4, '2020-02-12', '2021-02-12', 25000);
+);
