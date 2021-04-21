@@ -110,7 +110,6 @@ INSERT INTO options_accessories
 VALUES 
     ('alloys', 300),
     ('sun-roof', 100);
-);
 
 
 
@@ -120,7 +119,6 @@ INSERT INTO sales_rep
 VALUES 
     ('Diamond', 'Nick', '0678912350'),
     ('Houseman', 'Sam', '0678912349');
-);
 
 
 
@@ -139,4 +137,3 @@ INSERT INTO vehicles
 VALUES 
     ('Mégane', 'qs-12345-fg', 'Renault', 'blue', 7, 1, 3, '2020-01-11', '2021-01-11', 30000),
     ('Octavia', 'ml-98741-mp', 'Skoda', 'black', 8, 2, 4, '2020-02-12', '2021-02-12', 25000);
-);
