@@ -56,6 +56,51 @@ LEFT JOIN categories ON pro_cat_id = cat_id
 GROUP BY pro_name
 ORDER BY cat_name;
 
+--Q10. Afficher l'organigramme hiérarchique (nom et prénom et poste des employés) du magasin de Compiègne, 
+--classer par ordre alphabétique. Afficher le nom et prénom des employés, éventuellement le poste (si vous y parvenez).
+SELECT CONCAT(e.emp_lastname, ' ', e.emp_firstname),  CONCAT(s.emp_lastname, ' ', s.emp_firstname)
+FROM  employees e
+JOIN employees s ON e.emp_superior_id = s.emp_id
+JOIN shops ON sho_id = e.emp_sho_id
+JOIN posts p ON p.pos_id = e.emp_pos_id
+WHERE sho_city = 'Compiègne'
+ORDER BY e.emp_lastname;
+
+--Q11. Quel produit a été vendu avec la remise la plus élevée ? Afficher le montant de la remise, 
+--le numéro et le nom du produit, le numéro de commande et de ligne de commande.
+--Résultat : il s'agit du produit 13 (brouette Green), commande 43, ligne de commande 85.
+SELECT ode_id, ode_ord_id, pro_id, pro_name, ode_discount
+FROM products
+JOIN orders_details ON pro_id = ode_pro_id
+WHERE ode_discount = (
+    SELECT MAX(ode_discount)
+    FROM orders_details);
+
+--Q13. Combien y-a-t-il de clients canadiens ? Afficher dans une colonne intitulée 'Nb clients Canada'
+--Résultat : 2 clients
+SELECT COUNT(cus_countries_id) AS 'Nb clients Canada'
+FROM customers
+JOIN countries ON cou_id = cus_countries_id
+WHERE cou_id = 'CA';
+
+--Q14. Afficher le détail des commandes de 2020.
+SELECT ode_id, ode_unit_price, ode_discount, ode_quantity, ode_ord_id, ode_pro_id, ord_order_date
+FROM orders_details 
+JOIN orders ON ord_id = ode_ord_id
+WHERE ord_order_date LIKE '2020%';
+
+--Q15. Afficher les coordonnées des fournisseurs pour lesquels des commandes ont été passées.
+--Résultat : les 4 premiers fournisseurs de la table suppliers; 
+--seul le fournisseur n°5, FOURNIRIEN, n'a pas vendu de produits.
+SELECT sup_name, sup_city, sup_address, sup_zipcode, sup_phone, sup_mail
+FROM suppliers
+JOIN products ON pro_sup_id = sup_id
+JOIN orders_details ON pro_id = ode_pro_id
+GROUP BY sup_name
+HAVING COUNT(ode_quantity)>0
+ORDER BY sup_name;
+
+
 
 
 
