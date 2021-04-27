@@ -26,7 +26,7 @@
 23. ship_name           shipping name
 24. ship_address        shipping address
 
-25. password            password
+25. pass_password            password
 26. pass_date_add       date password added
 27. pass_date_mod       date password modified
 

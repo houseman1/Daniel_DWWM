@@ -87,7 +87,7 @@ WHERE cou_id = 'CA';
 SELECT ode_id, ode_unit_price, ode_discount, ode_quantity, ode_ord_id, ode_pro_id, ord_order_date
 FROM orders_details 
 JOIN orders ON ord_id = ode_ord_id
-WHERE ord_order_date LIKE '2020%';
+WHERE YEAR(ord_order_date)=2020;
 
 --Q15. Afficher les coordonnées des fournisseurs pour lesquels des commandes ont été passées.
 --Résultat : les 4 premiers fournisseurs de la table suppliers; 
@@ -100,7 +100,29 @@ GROUP BY sup_name
 HAVING COUNT(ode_quantity)>0
 ORDER BY sup_name;
 
+--Q16. Quel est le chiffre d'affaires de 2020 ?
+--Résultat : 1720.83 €
+
+SELECT ROUND(SUM((ode_unit_price-(ode_unit_price*ode_discount/100))*ode_quantity)2) AS chiffre_aff FROM orders_details
+JOIN orders ON ode_ord_id = ord_id 
+WHERE YEAR(ord_order_date)=2020;
 
 
+--Q17. Quel est le panier moyen ?
+--Résultat : 234.29 €
+SELECT AVG((ode_unit_price-(ode_unit_price*ode_discount/100))*ode_quantity)
+FROM orders_details
+GROUP BY 
 
+--Q18. Lister le total de chaque commande par total décroissant 
+--(Afficher numéro de commande, date, total et nom du client).
+--10 premiers résultats (68 au total)
 
+--Q19. La version 2020 du produit barb004 s'appelle désormais Camper et, bonne nouvelle, son prix subit 
+--une baisse de 10%.
+--Produit 12, prix d'origine = 100 €, le prix après réduction doit être de 90 €.
+UPDATE products
+SET 
+    pro_name = 'Camper';
+    pro_price = 
+WHERE 
