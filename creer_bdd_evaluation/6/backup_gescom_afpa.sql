@@ -50,7 +50,7 @@ INSERT INTO `categories` VALUES (2,'Outillage manuel',NULL),(3,'Outillage mécan
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
+--gi
 -- Table structure for table `countries`
 --
 

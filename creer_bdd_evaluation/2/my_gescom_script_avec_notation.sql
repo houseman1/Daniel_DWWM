@@ -1,9 +1,9 @@
 --Les tables sans clés étrangères sont créées en premier pour éviter les erreurs.
 --La clé primaire doit être déclarée avant sa clé étrangère.
-CREATE TABLE suppliers(
+CREATE TABLE IF NOT EXISTS suppliers(
    --L'incrémentation automatique permet de générer automatiquement un numéro unique lorsqu'un
    --nouvel enregistrement est inséré dans une table.
-   Id_suppliers INT AUTO INCREMENT NOT NULL,
+   Id_suppliers INT AUTO_INCREMENT NOT NULL,
    sup_nom VARCHAR(50),--varchar pour une chaîne de caractères
    sup_address VARCHAR(255),--varchar(255) pour une chaîne en cas où l'adresse serait longue
    sup_tel INT,--entier de taille normale
@@ -14,18 +14,18 @@ CREATE TABLE suppliers(
    PRIMARY KEY  (Id_suppliers)
 );
 
-CREATE TABLE customers(
-   Id_customers INT AUTO INCREMENT NOT NULL,
+CREATE TABLE IF NOT EXISTS customers(
+   Id_customers INT AUTO_INCREMENT NOT NULL,
    cus_name VARCHAR(50),
    cus_fir_name VARCHAR(50),
    cus_address VARCHAR(255),
    PRIMARY KEY(Id_customers)
 );
 
-CREATE TABLE orders(
+CREATE TABLE IF NOT EXISTS orders(
    --Cette table est separée de la table details, parce que les valeurs de cette table sont fixés.
    --Les valeurs de la tables detailed peuvent changer avec chaque commande.
-   Id_orders INT AUTO INCREMENT NOT NULL,
+   Id_orders INT AUTO_INCREMENT NOT NULL,
    ord_date DATE,--Date sous la forme "AAAA-MM-JJ"
    shp_date DATE,
    del_date DATE,
@@ -36,7 +36,7 @@ CREATE TABLE orders(
    FOREIGN KEY(Id_customers) REFERENCES customers(Id_customers)--La clé étrangère qui me permet de joindre les tables orders, customers et detailed.
 );
 
-CREATE TABLE employees(
+CREATE TABLE IF NOT EXISTS employees(
    Id_employees INT AUTO_INCREMENT NOT NULL,
    emp_name VARCHAR(50),
    emp_fir_name VARCHAR(50),
@@ -51,7 +51,7 @@ CREATE TABLE employees(
    PRIMARY KEY(Id_employees)
 );
 
-CREATE TABLE sales_rep(
+CREATE TABLE IF NOT EXISTS sales_rep(
    Id_sales_rep INT AUTO_INCREMENT NOT NULL,
    rep_name VARCHAR(50),
    rep_fir_name VARCHAR(50),
@@ -59,10 +59,10 @@ CREATE TABLE sales_rep(
    PRIMARY KEY(Id_sales_rep)
 );
 
-CREATE TABLE categories(
+CREATE TABLE IF NOT EXISTS categories(
    Id_categories INT AUTO_INCREMENT NOT NULL,
    cat_name VARCHAR(50),
-   Id_categories_1 INT NOT NULL,--sub catégories
+   Id_categories_1 INT NOT NULL,-- catégorie parent
    PRIMARY KEY(Id_categories),
    --Une auto-jointure est une jointure régulière, mais la table est jointe à elle-même.
    --C'est utilisé quand une table lie des informations avec des enregistrements de la même table.
@@ -71,7 +71,7 @@ CREATE TABLE categories(
    FOREIGN KEY(Id_categories_1) REFERENCES categories(Id_categories)
 );
 
-CREATE TABLE products(
+CREATE TABLE IF NOT EXISTS products(
    Id_products INT AUTO_INCREMENT NOT NULL,
    pro_cat VARCHAR(50),
    pro_int_ref VARCHAR(50),
@@ -93,7 +93,7 @@ CREATE TABLE products(
    FOREIGN KEY(Id_suppliers) REFERENCES suppliers(Id_suppliers)
 );
 
-CREATE TABLE passwords(
+CREATE TABLE IF NOT EXISTS passwords(
    Id_passwords INT AUTO_INCREMENT NOT NULL,
    pass_password VARCHAR(50),
    pass_date_add DATE,
@@ -106,7 +106,7 @@ CREATE TABLE passwords(
    FOREIGN KEY(Id_customers) REFERENCES customers(Id_customers)
 );
 
-CREATE TABLE detailed(
+CREATE TABLE IF NOT EXISTS detailed(
    --Cette table est separée de la table orders, parce que la quantité, discount et prix des commandes peuvent changer
    --à chaque commande.
    Id_products INT,
@@ -117,7 +117,7 @@ CREATE TABLE detailed(
    ,--J'ai utilisé une clé primaire composite parce que deux attributs (id_products et id_orders) de deux tables
    --différentes (products et orders) sont utilisées pour récupérer les informations uniques.
    --La clé composite se compose de deux attributs (colonnes de table) qui, ensemble, identifient de manière unique une ligne de la table.
-   PRIMARY KEY(Id_products, Id_orders)
+   PRIMARY KEY(Id_products, Id_orders),
    --Les clés étrangères doivent contenir les attributs de la clé primaire composite.
    --Il faut savoir id_products et id_orders pour obtenir la quantité, prix et discount.
    --Ses clés étrangères me permet de joindre les tables details, products et orders.
@@ -125,7 +125,7 @@ CREATE TABLE detailed(
    FOREIGN KEY(Id_orders) REFERENCES orders(Id_orders)
 );
 
-CREATE TABLE add_modify(
+CREATE TABLE IF NOT EXISTS add_modify(
    Id_products INT,
    Id_employees INT,
    pro_date_add DATE,
@@ -136,7 +136,7 @@ CREATE TABLE add_modify(
    FOREIGN KEY(Id_employees) REFERENCES employees(Id_employees)
 );
 
-CREATE TABLE represent(
+CREATE TABLE IF NOT EXISTS represent(
    Id_suppliers INT,
    Id_sales_rep INT,
    PRIMARY KEY(Id_suppliers, Id_sales_rep),--Une clé primaire composite, comme expliquer au-dessus (table detailed)

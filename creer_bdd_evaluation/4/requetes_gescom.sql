@@ -138,30 +138,33 @@ WHERE
 --Les produits 25 à 27 sont concernés. Prix d'origine du produit 25 : 100 €, prix après augmentation : 101,10 €.
 UPDATE products
 JOIN categories ON cat_id = pro_cat_id
-SET pro_price = pro_price + (pro_price * .011) 
+SET pro_price = pro_price + (pro_price * 1.011) 
 WHERE cat_name = 'Parasols' AND pro_id BETWEEN 25 AND 27;
 
 --Q20. Supprimer les produits non vendus de la catégorie "Tondeuses électriques". 
 --Vous devez utiliser une sous-requête sans indiquer de valeurs de clés.
-SELECT pro_name, pro_id
-FROM products
-JOIN categories ON pro_cat_id = cat_id
-WHERE cat_id = 9;
 
-SELECT pro_id, pro_name, cat_id, cat_name 
-FROM products 
-JOIN categories ON cat_id = pro_cat_id
-JOIN orders_details ON pro_id = ode_pro_id
-WHERE cat_id =
-    (SELECT cat_id 
-    FROM categories
-    WHERE cat_name = 'Tondeuses électriques');
+--phase one
+--SELECT pro_name, pro_id
+--FROM products
+--JOIN categories ON pro_cat_id = cat_id
+--WHERE cat_id = 9;
 
-SELECT pro_id, pro_name, cat_id, cat_name
-FROM categories
-JOIN products ON pro_cat_id = cat_id
-JOIN orders_details ON pro_id = ode_pro_id
-WHERE pro_id != ode_pro_id AND pro_cat_id = 
-    (SELECT cat_id 
-    FROM categories
-    WHERE cat_name = 'Tondeuses électriques');
+--phase two
+--SELECT pro_id, pro_name, cat_id, cat_name
+--FROM categories
+--JOIN products ON pro_cat_id = cat_id
+--WHERE pro_cat_id = 
+    --(SELECT cat_id 
+    --FROM categories
+    --WHERE cat_name = 'Tondeuses électriques');
+
+--final answer
+DELETE FROM products
+WHERE pro_cat_id = 
+    (SELECT cat_id
+    FROM categories 
+    WHERE cat_name="Tondeuses électriques")  
+    AND pro_id NOT IN 
+        (SELECT ode_pro_id
+        FROM orders_details);
