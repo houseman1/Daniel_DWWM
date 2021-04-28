@@ -1,0 +1,38 @@
+Que signifie le terme NoSQL ?
+
+Le terme NoSQL signifie "Not Only SQL", en français: 'pas seulement SQL'.
+
+
+
+Pourquoi parle-t-on de "non relationnel" ?
+
+Parce que une base NoSQL ne stocker pas les données dans les tables relationnel comme une base SQL.  
+Les bdd NoSQL permettent aux données associées d'être imbriquées dans une seule structure de données, comme un document. 
+ 
+
+
+Comment sont nées les bases NoSQL ?
+
+Les bases de données NoSQL sont apparues à la fin des années 2000 alors que le coût du stockage diminuait considérablement
+et la quantité d'applications de données nécessaires pour stocker a augmenté.  Les bases de données NoSQL permettaient aux développeurs
+de stocker d'énormes quantités de données non structurées. 
+
+
+
+Y-a-t-il un seul type de base NoSQL ?
+
+Non, il y a quatre types de base NoSQL:
+1. Les bases clé/valeur qui associent des clés uniques à des valeurs dans des données, comme Redis et DynanoDB.
+2. Les bases en colonnes.  Ces bases stockent les données dans des tables comportant un très grand nombre de colonnes.  
+3. Les bases orientées graphes pour suivre les relations entre données.
+4. Les bases documents comme MongoDB qui stocker les données dans les documents comportant des champs et valeurs (chaînes, numéros, booleans, tableau ou objets).
+
+
+
+Dans quel cas utiliser une base NoSQL ?
+
+Le rythme de développement avec les bases de données NoSQL peut être beaucoup plus rapide qu'avec une base de données SQL.
+Quand un développeur doit demander à un administrateur SQL de modifier la structure d'une base de données,
+puis de décharger et recharger les données, cela peut ralentir le développement.
+Une base de données NoSQL ne définit aucune limite sur les types de données que vous pouvez stocker ensemble.
+Elle vous permet d'ajouter différents nouveaux types en fonction de l'évolution de vos besoins.
