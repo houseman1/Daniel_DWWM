@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS my_gescom;
+
+USE my_gescom;
+
 CREATE TABLE IF NOT EXISTS suppliers(
    Id_suppliers INT AUTO_INCREMENT NOT NULL,
    sup_nom VARCHAR(50),

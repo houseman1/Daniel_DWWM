@@ -1,3 +1,8 @@
+CREATE DATABASE IF NOT EXISTS my_gescom;
+
+USE my_gescom;
+
+
 --Les tables sans clés étrangères sont créées en premier pour éviter les erreurs.
 --La clé primaire doit être déclarée avant sa clé étrangère.
 CREATE TABLE IF NOT EXISTS suppliers(
