@@ -1,0 +1,6 @@
+ db.modeles.insert({ "mod_nom": "C3",
+                    "mod_marque": "Citroën",               
+                    "mod_cylindree": 1.0,
+                    "mod_prix": 13500,  
+                    "mod_date_ajout": new Date(),                                                                     
+                   })

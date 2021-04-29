@@ -1,0 +1,44 @@
+--//create or use database
+
+        use jarditou
+
+
+
+--//create a collection (a collection corresponds to a table in SQL)
+
+        db.createCollection("outils")
+
+
+
+--//insert a document
+
+        db.outils.insert( { "out_nom": "spade",
+                            "out_marque": "Jims",
+                            "out_colour": "grey",
+                            "out_prix": 25,
+                            "out_date_ajout": new Date(),
+                                } )
+
+
+
+--//insert another document
+
+        db.outils.insert( { "out_nom": "multi_tool",
+                            "out_marque": "Jims",
+                            "out_colour": "black",
+                            "out_prix": 100,
+                            "out_date_ajout": new Date(),
+                            "out_attachment_options": [ "trowel", "rake", "hoe" ]
+                            } )
+
+
+
+--//modify one field of a document
+    
+        db.outils.update( { "out_nom": "spade" }, { $set: { out_prix: 30 } } )
+
+
+
+--//delete one field of a document
+
+        db.outils.update( { " "out_nom": "fork" }, { $unset: { out_prix: 100 } } )
