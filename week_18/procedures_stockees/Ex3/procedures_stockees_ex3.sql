@@ -27,4 +27,8 @@ BEGIN
 END $$
 DELIMITER ;
 
+--On exécutera la requête que si le code fournisseur est valide
+CALL CA_Supplier (1,2020);
+
+--On n'exécutera pas la requête que si le code fournisseur n'est pas valide
 CALL CA_Supplier (6,2020);
