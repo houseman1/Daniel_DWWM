@@ -29,6 +29,9 @@ VALUES (2, 3, 10, 10.00);
 --DELETE    empty                   deleted rows
 --UPDATE    rows after update       rows before update
 
+
+
+--Delete
 DELIMITER $$
 CREATE TRIGGER maj_total_delete
 AFTER DELETE ON lignedecommande
@@ -44,3 +47,41 @@ DELIMITER ;
 
 DELETE FROM lignedecommande 
 WHERE  id_commande = 1 AND id_produit = 3 AND quantite = 10;
+
+
+--Update
+DELIMITER $$
+CREATE TRIGGER maj_total_update
+AFTER UPDATE ON lignedecommande
+FOR EACH ROW
+BEGIN
+        DECLARE id_c INT;
+        DECLARE tot DOUBLE;
+        SET id_c = NEW.id_commande;
+        SET tot = (SELECT sum(prix*quantite) FROM lignedecommande WHERE id_commande=id_c);
+        UPDATE commande SET total=tot WHERE id=id_c;
+END $$
+DELIMITER ;
+
+UPDATE lignedecommande
+SET prix = 50
+WHERE id_commande = 1 AND id_produit = 3 AND quantite = 2;
+
+--Un champ remise était prévu dans la table commande. Comment pourrait-on le prendre en compte ?
+--Il faut ajouter total=tot-(tot*remise/100)
+DELIMITER $$
+CREATE TRIGGER maj_total_update
+AFTER UPDATE ON lignedecommande
+FOR EACH ROW
+BEGIN
+        DECLARE id_c INT;
+        DECLARE tot DOUBLE;
+        SET id_c = NEW.id_commande;
+        SET tot = (SELECT sum(prix*quantite) FROM lignedecommande WHERE id_commande=id_c);
+        UPDATE commande SET total=tot-(tot*remise/100) WHERE id=id_c;--la remise
+END $$
+DELIMITER ;
+
+UPDATE lignedecommande
+SET prix = 50
+WHERE id_commande = 1 AND id_produit = 3 AND quantite = 2;
