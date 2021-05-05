@@ -13,21 +13,45 @@ vehicles
     num_of_owners (numéro de propriétaires)
 
 options_accessories
-    opt_name
-    opt_price
+    	opt_name
+    	opt_price
+	type
+	
 
 customers
     cus_surname
     cus_first_name
     cus_address
-
-pro_cust
     company_name
     pro_company
     company_tel
 
-sales_reps (commercial)
-    rep_surname
-    rep_first_name
-    rep_tel  
+employees
+    	emp_surname
+    	emp_first_name
+   	emp_tel
+	emp_poste
+	 
+
+vente
+   	date de vente
+	date d'expédition
+	date de livraison
+	mode de paiement
+	adresse de facturation
+	adresse de livraison
+
+prestation
+	prix
+	type
+	date
+	heure
+	
+
+
+
+
+	
+
+
 
