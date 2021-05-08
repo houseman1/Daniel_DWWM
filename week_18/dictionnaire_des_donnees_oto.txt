@@ -97,9 +97,18 @@ validateurs
 
 ### Prestation
     prix
-    type
+    type (réparation/entretien)
     date
     heure
+
+### Règle de passage en MLD
+
+dans les cardinalités, l'entité avec la cardianlité n créera une clé étrangère dans l'autre entité.
+
+### Règle pour les cardinalités
+- On se place du coté d'une des deux entités
+- On se demande: "Pour un element de cette entité (1 ligne en base de données) pris au hasard, on se demande à combien d'élements de l'autre entité on peut l'associer (au minimum et au maximum).
+- On répète l'opération pour l'autre entité.
 
 
 
