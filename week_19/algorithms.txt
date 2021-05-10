@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=8hly31xKli0
+#Algorithms
+
+--Clearly defined problem statement, input and output.
+--The steps need to be in a very specific order.
+--The steps also need to be distinct.
+--The algorithm should produce a result.
+--The algorithm should complete in a finite amount of time.
+
+##Efficiency
+Time - the less time an algorithm takes to complete,
+the more efficient it is.
+Space - the less memory an algorithm uses, the more
+efficient it is.
+
+##Binary Search
+Input - a sorted list of values
+Output - position in the list of the target values
+or a value saying that the value does not exist
+
+##Big O
+Theoretical definition of the complexity of an algorithm
+as a function of the size.
+O(n)
+43 minutes
