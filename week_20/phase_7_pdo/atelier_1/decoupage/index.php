@@ -107,5 +107,5 @@ include("header.php");
     </div>
        
 <?php
-include("pieddepage.php");
+include("footer.php");
 ?>
