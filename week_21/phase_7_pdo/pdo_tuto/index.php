@@ -8,9 +8,9 @@
     $dsn = 'mysql:host='.$host.';dbname='.$dbname;
 
     // Create a PDO instance
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ));
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false)); //allows me to use LIMIT below
+    $db = new PDO($dsn, $user, $password);
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ));
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false)); //allows me to use LIMIT below
     # PDO QUERY
 
     // $stmt = $pdo->query('SELECT * FROM posts');
@@ -56,7 +56,7 @@
 
     // FETCH SINGLE POST
     // $sql = 'SELECT * FROM posts WHERE author = :author && is_published = :is_published';
-    // $stmt = $pdo->prepare($sql);
+    // $stmt = $db->prepare($sql);
     // $stmt->execute(['id'=>$id]);
     // $post=$stmt->fetch();
     // 
