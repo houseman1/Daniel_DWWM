@@ -112,6 +112,6 @@ $db = connexionBase(); // Appel de la fonction de connexion
         <div class="form-group">
             <button type="submit" class="btn btn-primary bg-dark">Envoyer</button>
         </div>
-    </div><!--end form-->
+    </form><!--end form-->
 
 <?=template_footer()?>
