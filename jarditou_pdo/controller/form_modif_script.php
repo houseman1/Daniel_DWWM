@@ -26,9 +26,10 @@ $pro_description_post = $_POST['pro_description'];
 $pro_prix_post        = $_POST['pro_prix'];
 $pro_stock_post       = $_POST['pro_stock'];
 $pro_couleur_post     = $_POST['pro_couleur'];
-$pro_date_post        = date("y-m-d");
+//$pro_date_post        = date("y-m-d");
 
-var_dump($_POST);
+$obj_datetime = new DateTime(null, new DateTimeZone('Europe/Paris'));
+$pro_date_post = $obj_datetime->format('Y-m-d');
 
 //construction de la requête INSERT sans injection SQL --
 $requete = $db->prepare("UPDATE produits SET
@@ -40,7 +41,7 @@ $requete = $db->prepare("UPDATE produits SET
                                  pro_couleur     = :pro_couleur_bind,
                                  pro_d_modif     = :pro_d_modif_bind
                                  WHERE pro_id    = :pro_id_bind");
-// All values to be UPDATED in the query must have a bindValue including the value in the WHERE condition
+// All values to be UPDATED in the query must have a bindValue (including the value in the WHERE condition)
 $requete->bindValue(':pro_id_bind',          $pro_id_post);
 $requete->bindValue(':pro_cat_id_bind',      $pro_cat_id_post);
 $requete->bindValue(':pro_libelle_bind',     $pro_libelle_post);

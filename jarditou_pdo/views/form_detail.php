@@ -114,27 +114,6 @@ else
                 <label class="form-check-label" for="radio_bloque_non">Non</label>
             </div>
         </div><!--end radios-->
-        <div><!--dates-->
-            <div class="form-row">
-                <label for="pro_d_ajout" class="col-form-label">Date d'ajout : </label>
-                <div>
-                    <input type="text" readonly class="form-control-plaintext" id="pro_d_ajout" name="pro_d_ajout" value="<?= " ".$result->pro_d_ajout ?>" readonly>
-                </div>
-            </div>
-            <div class="form-row">
-                <label for="pro_d_modif" class="col-form-label">Date de modification : </label>
-                <div>
-                    <input type="text" readonly class="form-control-plaintext" id="pro_d_modif" name="pro_d_modif"
-                           <?php
-                                if (is_null($result->pro_d_modif)){ ?>
-                                    value = "NULL"
-                                <?php } else { ?>
-                                    value="<?= $result->pro_d_modif?>
-                                <?php }
-                            ?>
-                </div>
-            </div>
-        </div><!--end dates-->
         <div class="form-group">
             <button type="submit" class="btn btn-warning">Modifier</button>
             <button type="submit" class="btn btn-info">Retour</button>

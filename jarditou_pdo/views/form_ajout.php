@@ -44,11 +44,6 @@ $db = connexionBase(); // Appel de la fonction de connexion
         <img src="src/img/promotion.jpg" class="imgage-responsive w-100" alt="promotion" title="promotion">    
     </div><!--end promo banner-->  
     <form id="form_ajout" method="POST" action="../controller/form_ajout_script.php" enctype="multipart/form-data"><!--form-->
-        <div class="form-group"><!--ID-->
-            <label for="pro_id">ID<sup>&lowast;</sup></label>
-            <input type="text" class="form-control valid" id="pro_id" name="pro_id">
-            <small id="error_id" class="text-danger"></small>
-        </div><!--end ID-->
         <div class="form-group"><!--Référence-->
             <label for="pro_ref">Référence<sup>&lowast;</sup></label>
             <input type="text" class="form-control valid" id="pro_ref" name="pro_ref">

@@ -1,4 +1,11 @@
 <?php
+//In the exercises below I have set the DateTimeZone when creating a new instance of DateTime
+//It is also possible to set the default timezone used by all date/time functions in the script with:
+        // date_default_timezone_set("Europe/Paris");
+//I have also assumed that the user is in France, which may not always be the case.
+//If needed, the timezone could be changed through user input, i.e. a dropdown menu
+
+
 // 1.  Affichez la date du jour au format mardi 2 juillet 2019.
 
 //Procedural:
@@ -10,7 +17,7 @@
 //Create a new instance of the class 'DateTime' into the object '$obj_datetime'
     $obj_datetime = new DateTime(null, new DateTimeZone('Europe/Paris'));
 
-//Assign the format 'l d F Y' to the string variable '$str_todays_date' using the 'format' property of the object '$datetime'
+//Assign the format 'l d F Y' to the string variable '$str_todays_date' using the 'format' property of the object '$obj_datetime'
     $str_todays_date = $obj_datetime->format('l d F Y');
 
 //Display the result
@@ -20,7 +27,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 // 2.  Trouvez le numéro de semaine de la date suivante : 14/07/2019.
 
-//assign the example date to the variable $example_date
+//assign the example date to the variable $str_example_date
     $str_example_date = "2019-07-14";
 
 //Create a new instance of the class 'DateTime' with the parameter '$str_example_date'
@@ -37,7 +44,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 // 3.  Combien reste-t-il de jours avant la fin de votre formation : 29/10/2021
 
-//Assign the course end date to the variable $end_date
+//Assign the course end date to the variable $str_end_date
     $str_end_date = "2021-10-29";
 
 //Create a new instance of the class 'DateTime' as the object '$obj_end_date' with the parameter '$str_end_date'
@@ -46,7 +53,7 @@
 //Create a new instance of the class 'DateTime' as the object '$obj_datetime' (current date)
     $obj_datetime = new DateTime(null, new DateTimeZone('Europe/Paris'));
 
-//Compare the difference between the today's date ($obj_datetime) and the end date using the property 'diff' of the object 'obj_end_date'
+//Compare the difference between today's date ($obj_datetime) and the end date ($obj_end_date) using the property 'diff' of the object 'obj_end_date'
 //Display the result in the format '%a' (total number of days as a result of a DateTime::diff()) using the property 'format' of the object 'obj_end_date'
     echo $obj_end_date->diff($obj_datetime)->format("There are %a days until the end of the course.");
     echo"<br>";
@@ -67,7 +74,7 @@
         //For the difference in months divide by 2628000
         //For the difference in years divide by 31536000
 //Use floor to round the result down to the nearest integer
-    echo "There are ".floor(($int_end_date-$int_todays_date)/86400) . " days until the end of the course.";
+    echo "There are ".floor(($int_end_date - $int_todays_date)/86400) . " days until the end of the course.";
     echo"<br>";
 
 
@@ -84,8 +91,10 @@
 //Use a while loop to increment the year until a leap year is found
     while ($isLeapYear == 0) {
         //Add one year to the object $obj_datetime using the 'add' property with a DateInterval of one year as the parameter
+        //'P1Y' stands for 'Period One Year'
         $obj_datetime->add(new DateInterval('P1Y'));
         //Assign the 'L' format of the object '$obj_datetime' to the string variable '$isLeapYear'
+        //'L' stands for 'Leap'
         $isLeapYear = $obj_datetime->format('L');
     }
 
@@ -164,6 +173,7 @@
     $str_date = $obj_datetime->format('d/m/Y');
 
 //Add one month to the object 'obj_datetime' using the 'add' property of the object '$obj_datetime'
+//'P1M' stands for 'Period One Month'
     $obj_datetime->add(new DateInterval('P1M'));
 
 //Assign the format 'day/month/year' of the object '$obj_datetime' to the string variable '$str_date_plus_one'

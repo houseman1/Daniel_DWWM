@@ -25,7 +25,11 @@ $pro_description_post = $_POST['pro_description'];
 $pro_prix_post        = $_POST['pro_prix'];
 $pro_stock_post       = $_POST['pro_stock'];
 $pro_couleur_post     = $_POST['pro_couleur'];
-$pro_date_post        = date("y-m-d");
+
+//Create a new instance of the class 'DateTime' to ensure timezone is France.
+//This will need to be
+$obj_datetime = new DateTime(null, new DateTimeZone('Europe/Paris'));
+$pro_date_post = $obj_datetime->format('Y-m-d');
 
 //construction de la requête INSERT sans injection SQL
 $requete = $db->prepare("INSERT INTO produits (
