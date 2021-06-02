@@ -18,26 +18,27 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// set the PDO erro
 
 //récupération des informations passées en POST, nécessaires à la modification
 
-$pro_cat_id=$_POST['cat_nom'];
-$pro_ref=$_POST['pro_ref'];
-$pro_libelle=$_POST['pro_libelle'];
-$pro_description=$_POST['pro_description'];
-$pro_prix=$_POST['pro_prix'];
-$pro_stock=$_POST['pro_stock'];
-$pro_couleur=$_POST['pro_couleur'];
-$pro_date = date("y-m-d");
+$pro_cat_id_post      = $_POST['cat_nom'];
+$pro_ref_post         = $_POST['pro_ref'];
+$pro_libelle_post     = $_POST['pro_libelle'];
+$pro_description_post = $_POST['pro_description'];
+$pro_prix_post        = $_POST['pro_prix'];
+$pro_stock_post       = $_POST['pro_stock'];
+$pro_couleur_post     = $_POST['pro_couleur'];
+$pro_date_post        = date("y-m-d");
 
 //construction de la requête INSERT sans injection SQL
-$requete = $db->prepare("INSERT INTO produits (pro_cat_id,pro_ref,pro_libelle,pro_description,pro_prix,pro_stock,pro_couleur,pro_d_ajout) 
-                        VALUES(:pro_cat_id,:pro_ref,:pro_libelle,:pro_description,:pro_prix,:pro_stock,:pro_couleur,:pro_d_ajout)");
-    $requete->bindValue(':pro_cat_id', $pro_cat_id);
-    $requete->bindValue(':pro_ref', $pro_ref);
-    $requete->bindValue(':pro_libelle', $pro_libelle);
-    $requete->bindValue(':pro_description', $pro_description);
-    $requete->bindValue(':pro_prix', $pro_prix);
-    $requete->bindValue(':pro_stock', $pro_stock);
-    $requete->bindValue(':pro_couleur', $pro_couleur);
-    $requete->bindValue(':pro_d_ajout', $pro_date);
+$requete = $db->prepare("INSERT INTO produits (
+                            pro_cat_id,pro_ref,pro_libelle,pro_description,pro_prix,pro_stock,pro_couleur,pro_d_ajout) 
+                        VALUES(:pro_cat_id_bind,:pro_ref_bind,:pro_libelle_bind,:pro_description_bind,:pro_prix_bind,:pro_stock_bind,:pro_couleur_bind,:pro_d_ajout_bind)");
+    $requete->bindValue(':pro_cat_id_bind'     , $pro_cat_id_post);
+    $requete->bindValue(':pro_ref_bind'        , $pro_ref_ref);
+    $requete->bindValue(':pro_libelle_bind'    , $pro_libelle_post);
+    $requete->bindValue(':pro_description_bind', $pro_description_post);
+    $requete->bindValue(':pro_prix_bind'       , $pro_prix_post);
+    $requete->bindValue(':pro_stock_bind'      , $pro_stock_post);
+    $requete->bindValue(':pro_couleur_bind'    , $pro_couleur_post);
+    $requete->bindValue(':pro_d_ajout_bind'    , $pro_date_post);
 
     $requete->execute();
 
