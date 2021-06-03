@@ -9,7 +9,7 @@ else
 } 
 ?>
 
-<?=template_header('')?>
+<?=template_header('Home')?>
 
     <!-- navbar -->
     <div class="row">
@@ -46,58 +46,26 @@ else
         <div class="row">
             <!-- left column -->
             <div id="leftColumnAccueil" class="col-12 col-sm-6 col-md-7 col-lg-8 col-xl-9">
-                    <h3>Nouveaux clients</h3>
-                    <h5>Veuillez saisir vos coordonnées</h5>
-                <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-6">
-                        <label for="validationCustom01" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <label for="validationCustom02" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Password</label>
-                        <input type="text" class="form-control" id="validationCustom03" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid city.
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
-                    </div>
-                </form>
-
+                <section id="section1">
+                    <h1>Accueil</h1>
+                    <hr>
+                    <article>
+                        <h3>L'entreprise</h3>
+                        <p>Notre entreprise familiale met tout son savoir-faire &agrave; votre disposition dans le domaine du jardin et du paysagisme.</p>
+                        <p>Cr&eacute;e il y a 70 ans, notre entreprise vend fleurs, arbustes, mat&eacute;riel &agrave; main et motoris&eacute;s.</p>
+                        <p>Implant&eacute;s &agrave; Amiens, nous intervenons dans tout le d&eacute;partement de la Somme : Albert, Doullens, P&eacute;ronne, Abbeville, Corbie</p>
+                    </article>
+                    <article>       
+                        <h3>Qualit&eacute;</h3>
+                        <p>Nous mettons &agrave; votre disposition un service personnalis&eacute;, avec 1 seul interlocuteur durant tout votre projet.</p>
+                        <p>Vous serez s&eacute;duit par notre expertise, nos comp&eacute;tences et notre s&eacute;rieux.</p>
+                    </article>
+                    <article>
+                        <h3>Devis gratuit</h3>
+                        <p>Vous pouvez bien s&ucirc;r contacter pour de plus amples informations ou pour une demande d’intervention. Vous souhaitez un devis ? Nous vous le r&eacute;alisons gratuitement.</p>                 
+                    </article>
+                    <hr>
+                </section>           
             </div>
             <!-- right column -->
             <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-warning text-center p-3">
@@ -105,7 +73,6 @@ else
             </div>
         </div>        
     </main>
-    <br>
     <!-- navbar -->
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark col-12">
@@ -129,8 +96,6 @@ else
             </div>
         </nav>
     </div>
-
-
        
 <?=template_footer()?>
 
