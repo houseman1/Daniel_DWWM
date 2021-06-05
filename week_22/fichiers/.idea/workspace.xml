@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f83420c2-b60f-4eb1-8a9d-f2e0706da9ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../week_22/fichiers/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week_22/fichiers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    <list default="true" id="c7e9c77d-9ed5-43a1-9f34-70569c81720d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jarditou_pdo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../jarditou_pdo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jarditou_pdo/controller/form_ajout_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../jarditou_pdo/controller/form_ajout_script.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jarditou_pdo/controller/form_modif_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../jarditou_pdo/controller/form_modif_script.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jarditou_pdo/views/form_ajout.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../jarditou_pdo/views/form_ajout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jarditou_pdo/views/form_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../jarditou_pdo/views/form_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../php_avance/dates.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../php_avance/dates/dates.php" beforeDir="false" afterPath="$PROJECT_DIR$/../php_avance/dates/dates.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,53 +20,39 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectId" id="1t6syXhkvrqTTpIAe68gJazbdIA" />
+  <component name="ProjectId" id="1tLUJcd9J3fG11mxdnYTZGOvVH4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/liste_liens" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dan\Desktop\daniel_dwwm\daniel_dwwm\jarditou_pdo\views" />
+      <recent name="C:\Users\Dan\Desktop\daniel_dwwm\daniel_dwwm\week_22\fichiers\liste_liens" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f83420c2-b60f-4eb1-8a9d-f2e0706da9ab" name="Default Changelist" comment="" />
-      <created>1622101134827</created>
+      <changelist id="c7e9c77d-9ed5-43a1-9f34-70569c81720d" name="Default Changelist" comment="" />
+      <created>1622547792699</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1622101134827</updated>
-      <workItem from="1622101139351" duration="21168000" />
-      <workItem from="1622444760360" duration="17291000" />
-      <workItem from="1622750459458" duration="13906000" />
-      <workItem from="1622825752682" duration="2301000" />
+      <updated>1622547792699</updated>
+      <workItem from="1622547794243" duration="8022000" />
     </task>
     <servers />
   </component>
@@ -82,6 +69,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
