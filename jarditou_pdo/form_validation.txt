@@ -8,21 +8,22 @@
 	<body>
 
 	<?php
-		//define variables and set to empty
+
+//define variables and set to empty
 
 		$name_err = $email_err = $gender_err = $website_err = "";
 		$name = $email = $gender = $comment = $website = "";
 
 		
-		//On a form with the method POST, check if the submit button has been clicked.
+//On a form with the method POST, check if the submit button has been clicked.
 
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-			//Check if the name input box is empty.
-			//If yes, assign an error message to the string variable '$name_err'.
-			//Otherwise, call the function 'test_input' with the 'name' value as its parameter, and assign it to the string variable '$name'.
-			//Use preg_match and regex to check the syntax of the name and display an error message if necessary.
+//Check if the name input box is empty.
+//If yes, assign an error message to the string variable '$name_err'.
+//Otherwise, call the function 'test_input' with the 'name' value as its parameter, and assign it to the string variable '$name'.
+//Use preg_match and regex to check the syntax of the name and display an error message if necessary.
 
 			if(empty($_POST["name"])) {
 				$name_err = "Please enter a valid name";
@@ -35,7 +36,7 @@
 			}
 		}
 
-		//Repeat the process for all input boxes
+//Repeat the process for all input boxes
 
 		if(empty($_POST["email"])) {
 			$email_err = "Please enter a valid email address"
@@ -47,7 +48,7 @@
 			}
 		}
 		
-		//The website field is not required so the variable 'website' is assigned the value "" instead of displaying an error.
+//The website field is not required so the variable 'website' is assigned the value "" instead of displaying an error.
 		
 		if(empty($_POST["website"])) {
 			$website = "";
@@ -76,13 +77,13 @@
 		}
 
 		
-		//function test_data() calls three other functions:
-		//1.  The trim() function strips unnecessary characters (extra space, tab, newline) from the user input data. 
-		//2.  The stripslashes() function removes backslashes from the user input data (it literally strips the slashes)
-		//3.  The htmlspecialchars() function converts special characters to HTML entities.
-			//This means that it will replace HTML characters like < and > with &lt; and &gt;. 
-			//This prevents attackers from exploiting the code by injecting HTML or Javascript code (Cross-site Scripting attacks) in forms.
-			//Without htmlspecialchars(), the $_SERVER["PHP_SELF"] variable is not secure - IT MUST BE INCLUDED
+//function test_data() calls three other functions:
+//1.  The trim() function strips unnecessary characters (extra space, tab, newline) from the user input data. 
+//2.  The stripslashes() function removes backslashes from the user input data (it literally strips the slashes)
+//3.  The htmlspecialchars() function converts special characters to HTML entities.
+	//This means that it will replace HTML characters like < and > with &lt; and &gt;. 
+	//This prevents attackers from exploiting the code by injecting HTML or Javascript code (Cross-site Scripting attacks) in forms.
+	//Without htmlspecialchars(), the $_SERVER["PHP_SELF"] variable is not secure - IT MUST BE INCLUDED
 		
 		function test_input ($data) {
 			$data = trim($data);
