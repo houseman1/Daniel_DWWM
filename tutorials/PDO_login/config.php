@@ -8,8 +8,8 @@ class config {
         $password = "";
         $dbname = "login_project";
 
-//Connect to the database and catch any errors.
-//      Display an error message if errors are found.
+        //Connect to the database and catch any errors.
+        //Display an error message if errors are found.
         try {
             $con = new PDO('mysql:host=' .$host. ';charset=utf8;dbname=' .$dbname, $username, $password);
             $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);

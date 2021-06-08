@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f83420c2-b60f-4eb1-8a9d-f2e0706da9ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../tutorials/PDO_login/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tutorials/PDO_login/update.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/login_process.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/client_home_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client_home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/update.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +46,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -53,6 +62,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dan\Desktop\daniel_dwwm\daniel_dwwm\jarditou_pdo\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dan\Desktop\daniel_dwwm\daniel_dwwm\jarditou_pdo\views" />
     </key>
   </component>
@@ -67,7 +79,7 @@
       <workItem from="1622101139351" duration="21168000" />
       <workItem from="1622444760360" duration="17291000" />
       <workItem from="1622750459458" duration="13906000" />
-      <workItem from="1622825752682" duration="6414000" />
+      <workItem from="1622825752682" duration="32417000" />
     </task>
     <servers />
   </component>

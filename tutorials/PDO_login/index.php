@@ -3,7 +3,8 @@
 include_once ("config.php");
 
 //'$con = config::connect();'  assigns the connection configuration to the object '$con'.
-//'connect()' is a static function of the 'config' class.
+//'connect()' is a static function of the 'config' class.  $con is a PDO object.
+//A class is a template for objects, and an object is an instance of class.
 //See config.php
 $con = config::connect();
 

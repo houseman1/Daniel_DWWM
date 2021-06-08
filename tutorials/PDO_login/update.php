@@ -1,9 +1,12 @@
 <?php
 
+//session_start() creates a session or resumes the current one based on a session identifier passed via a GET or
+//POST request, or passed via a cookie.
 session_start();
 
 $username = $_SESSION['username'];
 
+//include "config.php" for connecting to the database
 include_once("config.php");
 
 ?>

@@ -1,8 +1,12 @@
 <?php
 
+//session_start() creates a session or resumes the current one based on a session identifier passed via a GET or
+//POST request, or passed via a cookie.
 session_start();
 
+//include "config.php" for connecting to the database
 include_once "config.php";
+
 
 //FUNCTIONS----------------------------------------------
 
@@ -61,7 +65,6 @@ function test_input($string)
     return $string;
 }
 
-
 //test_password------------------------------------------
 function test_password($string)
 {
@@ -104,8 +107,8 @@ function check_username_exists($con, $username)
 
     $query->execute();
 
-//Check if the username exists.
-//If yes, return false.
+    //Check if the username exists.
+    //If yes, return false.
     if($query->rowCount() == 1)
     {
         return false;
@@ -114,7 +117,6 @@ function check_username_exists($con, $username)
         return true;
     }
 }
-
 
 //check_email_exists-------------------------------------
 function check_email_exists($con, $email)
@@ -129,8 +131,8 @@ function check_email_exists($con, $email)
 
     $query->execute();
 
-//Check if the username exists.
-//If yes, return false.
+    //Check if the username exists.
+    //If yes, return false.
     if($query->rowCount() == 1)
     {
         return false;
@@ -140,51 +142,53 @@ function check_email_exists($con, $email)
     }
 }
 
+
 //END OF FUNCTIONS---------------------------------------
+
 
 
 
 //REGISTER-----------------------------------------------
 if(isset($_POST['register']))
 {
-//Create a new variable '$con'
-//Call the static method 'connect()' by using the class name 'config'
-//Store the reference of the connection in the variable '$con'
+    //Create a new variable '$con'
+    //Call the static method 'connect()' by using the class name 'config'
+    //Store the reference of the connection in the variable '$con'
     $con = config::connect();
 
-//The 'test_input' function validates user input - see function below.
-//The 'test_password' function hashes the password to make it secure
+    //The 'test_input' function validates user input - see function below.
+    //The 'test_password' function hashes the password to make it secure
     //and unreadable in the database - see function below.
     $username = test_input($_POST['username']);
     $email = test_input($_POST['email']);
     $password = test_password($_POST['password']);
 
-//validate inputs are not empty
-//'return' prevents the following code being executed
+    //validate inputs are not empty
+    //'return' prevents the following code being executed
     if($username == "" || $email == "" || $password == "")
     {
         return;
     }
 
-//check if user already exists using the 'check_username_exists' function
-//'return' prevents the following code being executed
+    //check if user already exists using the 'check_username_exists' function
+    //'return' prevents the following code being executed
     if(!check_username_exists($con, $username))
     {
         echo "Username already exists!";
         return;
     }
 
-//check if email already exists using the 'check_email_exists' function
-//'return' prevents the following code being executed
+    //check if email already exists using the 'check_email_exists' function
+    //'return' prevents the following code being executed
     if(!check_email_exists($con, $email))
     {
         echo "Email already exists!";
         return;
     }
 
-//Call the function 'insert_details' to INSERT the users details into the database.
-//Use an 'if' condition to check if the INSERT was successful.
-//If yes, bind the variable '$username' to the variable '$_SESSION'.
+    //Call the function 'insert_details' to INSERT the users details into the database.
+    //Use an 'if' condition to check if the INSERT was successful.
+    //If yes, bind the variable '$username' to the variable '$_SESSION'.
     if(insert_details($con, $username, $email, $password));
     {
         $_SESSION['username'] = $username;
@@ -192,20 +196,18 @@ if(isset($_POST['register']))
     }
 }
 
-
-
 //LOGIN--------------------------------------------------
 if(isset($_POST['login']))
 {
-//Call the static method 'connect()' by using the class name 'config'
-//Store the reference of the connection in the variable '$con'
+    //Call the static method 'connect()' by using the class name 'config'
+    //Store the reference of the connection in the variable '$con'
     $con = config::connect();
 
     $username = test_input($_POST['username']);
     $password = test_password($_POST['password']);
 
-//validate inputs are not empty
-//'return' prevents following code being executed
+    //validate inputs are not empty
+    //'return' prevents following code being executed
     if($username == "" || $password == "")
     {
         return;
@@ -222,71 +224,67 @@ if(isset($_POST['login']))
     }
 }
 
-
-
 //UPDATE-------------------------------------------------
 if(isset($_POST['update'])) {
-//Create a new variable '$con'
-//Call the static method 'connect()' by using the class name 'config'
-//Store the reference of the connection in the variable '$con'
-        $con = config::connect();
+    //Create a new variable '$con'
+    //Call the static method 'connect()' by using the class name 'config'
+    //Store the reference of the connection in the variable '$con'
+    $con = config::connect();
 
-//The 'test_input' function validates user input - see function below.
-//The 'test_password' function hashes the password to make it secure
-        //and unreadable in the database - see function below.
-        $username = test_input($_POST['username']);
-        $email = test_input($_POST['email']);
-        $password = test_password($_POST['password']);
+    //The 'test_input' function validates user input - see function below.
+    //The 'test_password' function hashes the password to make it secure
+    //and unreadable in the database - see function below.
+    $username = test_input($_POST['username']);
+    $email = test_input($_POST['email']);
+    $password = test_password($_POST['password']);
 
-//validate inputs are not empty
-//'return' prevents following code being executed
-        if ($username == "" || $email == "" || $password == "") {
-            return;
-        }
+    //validate inputs are not empty
+    //'return' prevents following code being executed
+    if ($username == "" || $email == "" || $password == "") {
+        return;
+    }
 
-//check if user already exists using the 'check_username_exists' function
-//'return' prevents the following code being executed
+    //check if user already exists using the 'check_username_exists' function
+    //'return' prevents the following code being executed
     if(!check_username_exists($con, $username))
     {
         echo "Username already exists!";
         return;
     }
 
-//check if email already exists using the 'check_email_exists' function
-//'return' prevents the following code being executed
+    //check if email already exists using the 'check_email_exists' function
+    //'return' prevents the following code being executed
     if(!check_email_exists($con, $email))
     {
         echo "Email already exists!";
         return;
     }
 
-//Assign the current username to the string variable 'current_username'.
-        $current_username = $_SESSION['username'];
+    //Assign the current username to the string variable 'current_username'.
+    $current_username = $_SESSION['username'];
 
-//Fetch the user id
-        $query = $con->prepare("
-        
-            SELECT * FROM users WHERE username=:username
-        
-        ");
+    //Fetch the user id
+    $query = $con->prepare("
+    
+        SELECT * FROM users WHERE username=:username
+    
+    ");
 
-        $query->bindParam(":username", $current_username);
+    $query->bindParam(":username", $current_username);
 
-        $query->execute();
+    $query->execute();
 
-        $result = $query->fetch(PDO::FETCH_ASSOC);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
 
-        $id = $result['id'];
+    $id = $result['id'];
 
-//Use an 'if' condition to call the function 'update_details' to UPDATE the users details in the database.
-//If the UPDATE was successful, bind the variable '$username' to the variable '$_SESSION'.
-        if (update_details($con, $id, $username, $email, $password)) ;
-        {
-            $_SESSION['username'] = $username;
-            header("Location: profile.php");
-            echo "Update successful";
-        }
+    //Use an 'if' condition to call the function 'update_details' to UPDATE the users details in the database.
+    //If the UPDATE was successful, bind the variable '$username' to the variable '$_SESSION'.
+    if (update_details($con, $id, $username, $email, $password)) ;
+    {
+        $_SESSION['username'] = $username;
+        header("Location: profile.php");
+        echo "Update successful";
     }
+}
 ?>
-
-

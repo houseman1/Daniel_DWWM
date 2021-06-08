@@ -1,12 +1,19 @@
 <?php
-if (file_exists("controller/functions.php") ) 
+
+session_start();
+
+if (file_exists("../controller/functions.php") )
 {
-    include("controller/functions.php");
+    include("../controller/functions.php");
 } 
 else 
 {
     echo "The file functions does not exist";
-} 
+}
+
+//Assign the connection to the PDO object $db
+$db = connexionBase();
+
 ?>
 
 <?=template_header('Home')?>
@@ -69,7 +76,7 @@ else
             </div>
             <!-- right column -->
             <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-warning text-center p-3">
-                <h4>[Colonne de droite]</h4>
+                <h4>Welcome <?php echo $_SESSION['username'] ?> </h4>
             </div>
         </div>        
     </main>
