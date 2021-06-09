@@ -5,7 +5,6 @@ session_start();
 
 //Include functions.php
     //connexionBase(), header() and footer()
-
 if (file_exists("functions.php")) {
     include("functions.php");
 } else {
@@ -14,7 +13,6 @@ if (file_exists("functions.php")) {
 
 //Assign the connection to the PDO object $db
 $db = connexionBase();
-
 
 //FUNCTIONS-----------------------------------------------
 
@@ -69,25 +67,31 @@ function check_login($db, $username, $password)
 
 }
 
-//secure_input()------------------------------------------
-//Validate the input and make it secure.
-//The strip_tags() function strips a string from HTML, XML, and PHP tags.
-//The str_replace() function replaces some characters with some other characters in a string.
-    //In this case, spaces are removed.
-//The trim() function removes whitespace and other predefined characters from both sides of a string.
-//The stripslashes() function removes backslashes.
-//The htmlspecialchars() function converts some predefined characters to HTML entities.
-
-function secure_input($string)
+//check_account_exists-----------------------------------
+function check_account_exists($db, $nom, $prenom)
 {
-    $string = strip_tags($string);
-    $string = str_replace(" ", "", $string);
-    $string = trim($string);
-    $string = stripslashes($string);
-    $string = htmlspecialchars($string);
+    $query = $db->prepare("
+    
+    SELECT * FROM users WHERE nom=:nom AND prenom=:prenom
+    
+    ");
 
-    return $string;
+    $query->bindParam(":nom", $nom);
+    $query->bindParam(":prenom", $prenom);
+
+    $query->execute();
+
+    //Check if the username exists.
+    //If yes, return false.
+    if($query->rowCount() == 1)
+    {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
+
 
 //check_username_exists-----------------------------------
 function check_username_exists($db, $username)
@@ -137,22 +141,41 @@ function check_email_exists($db, $email)
     }
 }
 
+//test_input()------------------------------------------
+//Validate the input and make it secure.
+//The strip_tags() function strips a string from HTML, XML, and PHP tags.
+//The trim() function removes whitespace and other predefined characters from both sides of a string.
+//The stripslashes() function removes backslashes.
+//The htmlspecialchars() function converts some predefined characters to HTML entities.
+
+function test_input($string)
+{
+    $string = strip_tags($string);
+    $string = trim($string);
+    $string = stripslashes($string);
+    $string = htmlspecialchars($string);
+
+    return $string;
+}
+
 //END OF FUNCTIONS----------------------------------------
 
 
 
 //REGISTER------------------------------------------------
+
 if(isset($_POST['register']))
 {
     $db = connexionBase();
+
     //The 'secure_input' function validates and makes user input secure.
     //The 'password_hash' function hashes the password to make it secure
         //and unreadable in the database.
 
-    $nom = secure_input($_POST['nom']);
-    $prenom = secure_input($_POST['prenom']);
-    $email = secure_input($_POST['email']);
-    $username = secure_input($_POST['username']);
+    $nom = test_input($_POST['nom']);
+    $prenom = test_input($_POST['prenom']);
+    $email = test_input($_POST['email']);
+    $username = test_input($_POST['username']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $date_inscrit = date('Y-m-d');
     $date_dern_conn = date('Y-m-d');
@@ -161,10 +184,20 @@ if(isset($_POST['register']))
     //'return' prevents the following code being executed
     if($nom == "" || $prenom == "" || $email == "" || $username == "" || $password == "")
     {
+        echo "Format invalide";
         return;
     }
 
-    //check if user already exists using the 'check_username_exists' function
+    //check if the name already exists using the 'check_nom_exists' function
+    //'return' prevents the following code being executed
+    if(!check_account_exists($db, $nom, $prenom))
+    {
+        echo "You already have an account, please login";
+        return;
+    }
+
+
+    //check if the username already exists using the 'check_username_exists' function
     //'return' prevents the following code being executed
     if(!check_username_exists($db, $username))
     {

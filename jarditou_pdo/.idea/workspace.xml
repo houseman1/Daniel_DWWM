@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f83420c2-b60f-4eb1-8a9d-f2e0706da9ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/login_process.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client_home_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client_home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/login_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +69,7 @@
       <workItem from="1622101139351" duration="21168000" />
       <workItem from="1622444760360" duration="17291000" />
       <workItem from="1622750459458" duration="13906000" />
-      <workItem from="1622825752682" duration="32417000" />
+      <workItem from="1622825752682" duration="42561000" />
     </task>
     <servers />
   </component>
