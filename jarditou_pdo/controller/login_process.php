@@ -14,6 +14,7 @@ if (file_exists("functions.php")) {
 //Assign the connection to the PDO object $db
 $db = connexionBase();
 
+
 //FUNCTIONS-----------------------------------------------
 
 //insert_details()-----------------------------------------
@@ -40,33 +41,6 @@ function insert_details($db, $nom, $prenom, $email, $username, $password, $date_
 
 }
 
-//check_login($db, $username, $password)------------------
-//Check if the username and password already exist.
-
-function check_login($db, $username, $password)
-{
-    $query = $db->prepare("
- 
-    SELECT * FROM users WHERE username=:username AND password=:password
- 
- ");
-
-    $query->bindParam(":username", $username);
-    $query->bindParam(":password", $password);
-
-    $query->execute();
-
-    //check how many rows are returned
-    if ($query->rowCount() == 1) {
-        //username and password exist
-        return true;
-    } else {
-        //username and password do not exist
-        return false;
-    }
-
-}
-
 //check_account_exists-----------------------------------
 function check_account_exists($db, $nom, $prenom)
 {
@@ -81,7 +55,7 @@ function check_account_exists($db, $nom, $prenom)
 
     $query->execute();
 
-    //Check if the username exists.
+    //Check if the user's row exists in the database.
     //If yes, return false.
     if($query->rowCount() == 1)
     {
@@ -106,7 +80,7 @@ function check_username_exists($db, $username)
 
     $query->execute();
 
-    //Check if the username exists.
+    //Check if the username exists in the database.
     //If yes, return false.
     if($query->rowCount() == 1)
     {
@@ -130,7 +104,7 @@ function check_email_exists($db, $email)
 
     $query->execute();
 
-    //Check if the username exists.
+    //Check if the email exists in the database.
     //If yes, return false.
     if($query->rowCount() == 1)
     {
@@ -168,10 +142,9 @@ if(isset($_POST['register']))
 {
     $db = connexionBase();
 
-    //The 'secure_input' function validates and makes user input secure.
+    //The 'test_input' function validates and makes user input secure.
     //The 'password_hash' function hashes the password to make it secure
-        //and unreadable in the database.
-
+    //and unreadable in the database.
     $nom = test_input($_POST['nom']);
     $prenom = test_input($_POST['prenom']);
     $email = test_input($_POST['email']);
@@ -184,8 +157,11 @@ if(isset($_POST['register']))
     //'return' prevents the following code being executed
     if($nom == "" || $prenom == "" || $email == "" || $username == "" || $password == "")
     {
+        //echo "Format invalide";
+        //$nom_err = "Format invalide";
         echo "Format invalide";
         return;
+        //header("Location: ../views/register.php");
     }
 
     //check if the name already exists using the 'check_nom_exists' function
@@ -229,23 +205,53 @@ if(isset($_POST['register']))
 
 if(isset($_POST['login']))
 {
-    $username = secure_input($_POST['username']);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $username = ($_POST['username']);
+    $password = ($_POST['password']);
 
     //validate inputs are not empty
     //'return' prevents following code being executed
     if($username == "" || $password == "")
     {
+        echo "Format invalide";
+        return;
+    }
+
+    //Prepare a query to get the user's details from the database
+    $query = $db->prepare("
+    
+    SELECT * FROM users WHERE username=:username
+    
+    ");
+
+    $query->bindParam(":username", $username);
+
+    $query->execute();
+
+    //Assign the row details to 'user_row'
+    $user_row = $query->fetch();
+
+    //Compare the password entered with the hashed password in the database
+    //
+    if(password_verify($password, $user_row['password']))
+    {
+        $_SESSION['username'] = $username;
+        header("Location: ../views/client_home.php");
+    }
+    else {
+        echo "The username and password are incorrect";
         return;
     }
 
 
-    if(check_login($db, $username, $password))
+
+
+   /* if(check_login($db, $username, $password))
     {
         $_SESSION['username'] = $username;
-        header("Location: client_home.php");
+        header("Location: login.php");
     }
     else {
         echo "The username and password are incorrect";
-    }
+        return;
+    }*/
 }

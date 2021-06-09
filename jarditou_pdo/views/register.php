@@ -1,8 +1,6 @@
 <?php
 
-
-
-//include 'functions.php' (connexionBase(), header() and footer())
+//include functions: connexionBase, header and footer
 if (file_exists("../controller/functions.php")) {
     include("../controller/functions.php");
 } else {
@@ -11,13 +9,7 @@ if (file_exists("../controller/functions.php")) {
 
 //Assign the connection to the PDO object $db
 $db = connexionBase();
-
-//Define error variables and set to empty
-$nom_err = $prenom_err = $email_err = $username_err = $password_err = "";
-
 ?>
-
-
 
 <?= template_header("S'inscrire") ?>
 
@@ -76,7 +68,7 @@ $nom_err = $prenom_err = $email_err = $username_err = $password_err = "";
                 <br>
                 <div class="col-md-12"><!--nom-->
                     <input type="text" class="form-control" name="nom" placeholder="Nom">
-                    <span class="error"> <?php echo $nom_err; ?> </span>
+                    <small class="error"> <?php if(isset($_POST['register'])) {echo $nom_err;} ?> </small>
                     <br>
                 </div><!--end nom-->
                 <div class="col-md-12"><!--prenom-->

@@ -21,7 +21,7 @@ $db = connexionBase();
     <!-- navbar -->
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
-            <a class="navbar-brand" href="#">Jarditou</a>
+            <a class="navbar-brand" href="../index.php">Jarditou</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -76,7 +76,8 @@ $db = connexionBase();
             </div>
             <!-- right column -->
             <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-warning text-center p-3">
-                <h4>Welcome <?php echo $_SESSION['username'] ?> </h4>
+                <br>
+                <h4>Bienvenue <?php echo $_SESSION['username'] ?> </h4>
             </div>
         </div>        
     </main>
