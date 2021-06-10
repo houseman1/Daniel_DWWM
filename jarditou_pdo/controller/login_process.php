@@ -17,7 +17,7 @@ $db = connexionBase();
 
 //FUNCTIONS-----------------------------------------------
 
-//insert_details()-----------------------------------------
+//FUNCTION - insert_details() -----------------------------------------
 //Insert the details on the registration form into the database.
 function insert_details($db, $nom, $prenom, $email, $username, $password, $date_inscrit, $date_dern_conn)
 {
@@ -41,7 +41,7 @@ function insert_details($db, $nom, $prenom, $email, $username, $password, $date_
 
 }
 
-//check_account_exists-----------------------------------
+//FUNCTION - check_account_exists -----------------------------------
 function check_account_exists($db, $nom, $prenom)
 {
     $query = $db->prepare("
@@ -67,7 +67,7 @@ function check_account_exists($db, $nom, $prenom)
 }
 
 
-//check_username_exists-----------------------------------
+//FUNCTION - check_username_exists -----------------------------------
 function check_username_exists($db, $username)
 {
     $query = $db->prepare("
@@ -91,7 +91,7 @@ function check_username_exists($db, $username)
     }
 }
 
-//check_email_exists-------------------------------------
+//FUNCTION - check_email_exists -------------------------------------
 function check_email_exists($db, $email)
 {
     $query = $db->prepare("
@@ -115,7 +115,7 @@ function check_email_exists($db, $email)
     }
 }
 
-//test_input()------------------------------------------
+//FUNCTION - test_input() ------------------------------------------
 //Validate the input and make it secure.
 //The strip_tags() function strips a string from HTML, XML, and PHP tags.
 //The trim() function removes whitespace and other predefined characters from both sides of a string.
@@ -131,6 +131,28 @@ function test_input($string)
 
     return $string;
 }
+
+//FUNCTION - date_dern_conn()
+//Insert the last connection date into the database whenever the user logs in
+
+function modif_date_dern($db, $username, $date_dern_conn)
+{
+    $query = $db->prepare("
+    
+    UPDATE users SET date_dern_conn=:date_dern_conn
+
+    WHERE username=:username
+    
+    ");
+
+    $query->bindParam(":username", $username);
+    $query->bindParam(":date_dern_conn", $date_dern_conn);
+
+    return $query->execute();
+
+}
+
+
 
 //END OF FUNCTIONS----------------------------------------
 
@@ -149,9 +171,11 @@ if(isset($_POST['register']))
     $prenom = test_input($_POST['prenom']);
     $email = test_input($_POST['email']);
     $username = test_input($_POST['username']);
+
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $date_inscrit = date('Y-m-d');
-    $date_dern_conn = date('Y-m-d');
+
+    $date_inscrit = date_create()->format('Y-m-d H:i:s');
+    $date_dern_conn = date_create()->format('Y-m-d H:i:s');
 
     //validate inputs are not empty
     //'return' prevents the following code being executed
@@ -208,6 +232,9 @@ if(isset($_POST['login']))
     $username = ($_POST['username']);
     $password = ($_POST['password']);
 
+    $obj_datetime = new DateTime();
+    $date_dern_conn = $obj_datetime->format('Y-m-d H:i:s');
+
     //validate inputs are not empty
     //'return' prevents following code being executed
     if($username == "" || $password == "")
@@ -234,8 +261,9 @@ if(isset($_POST['login']))
     //
     if(password_verify($password, $user_row['password']))
     {
-        $_SESSION['username'] = $username;
-        header("Location: ../views/client_home.php");
+            modif_date_dern($db, $username, $date_dern_conn);
+            $_SESSION['username'] = $username;
+            header("Location: ../views/client_home.php");
     }
     else {
         echo "The username and password are incorrect";
