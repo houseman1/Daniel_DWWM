@@ -172,12 +172,15 @@ if(isset($_POST['register']))
     $email = test_input($_POST['email']);
     $username = test_input($_POST['username']);
 
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = ($_POST['password']);
+    $confirm_password = ($_POST['confirm_password']);
 
     $date_inscrit = date_create()->format('Y-m-d H:i:s');
     $date_dern_conn = date_create()->format('Y-m-d H:i:s');
 
-    //validate inputs are not empty
+    $cbx_admin = ($_POST['cbx_admin']);
+
+    //Check that the inputs are not empty
     //'return' prevents the following code being executed
     if($nom == "" || $prenom == "" || $email == "" || $username == "" || $password == "")
     {
@@ -185,9 +188,18 @@ if(isset($_POST['register']))
         //$nom_err = "Format invalide";
         echo "Format invalide";
         return;
-        //header("Location: ../views/register.php");
     }
 
+    //Check that the two passwords match.
+    //If yes, hash the password.
+    if($password == $confirm_password)
+    {
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    }
+    else {
+        echo "The passwords do not match";
+        return;
+    }
     //check if the name already exists using the 'check_nom_exists' function
     //'return' prevents the following code being executed
     if(!check_account_exists($db, $nom, $prenom))
@@ -211,6 +223,12 @@ if(isset($_POST['register']))
     {
         echo "Email already exists!";
         return;
+    }
+
+    //Navigate to admin_password.php to if admin checkbox is ticked
+    if(isset($_POST['cbx_admin']) && $_POST['cbx_admin'] == 0)
+    {
+        header("Location: ../views/admin_password.php");
     }
 
     //Call the function 'insert_details' to INSERT the users details into the database.

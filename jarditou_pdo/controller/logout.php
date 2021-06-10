@@ -2,7 +2,7 @@
 
 //Destroy all data associated with the current seesion
 
-seesion_destroy();
+session_destroy();
 
 //Redirect to index.php
 
