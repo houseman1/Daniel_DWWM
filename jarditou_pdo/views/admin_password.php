@@ -61,44 +61,20 @@ $db = connexionBase();
         </div><!--end left column-------------------------------------------------------------------------------------->
 
         <!--right column----------------------------------------------------------------------------------------------->
-        <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-info text-center text-white p-3">
+        <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-danger text-center text-white p-3">
             <form method="POST" action="../controller/login_process.php"><!--registration form-->
                 <br>
-                <h4>S'inscrire</h4>
+                <h4>Mot de passe admin</h4>
                 <br>
-                <div class="col-md-12"><!--nom-->
-                    <input type="text" class="form-control" name="nom" placeholder="Nom">
-                    <small class="error"> <?php if(isset($error_nom)) {echo $error_nom;} ?> </small>
-                    <br>
-                </div><!--end nom-->
-                <div class="col-md-12"><!--prenom-->
-                    <input type="text" class="form-control" name="prenom" placeholder="Pr&eacute;nom">
-                    <br>
-                </div><!--end prenom-->
-                <div class="col-md-12"><!--email-->
-                    <input type="email" class="form-control" name="email" placeholder="E-mail">
-                    <br>
-                </div><!--end email-->
-                <div class="col-md-12"><!--username-->
-                    <input type="text" class="form-control" name="username" placeholder="Identifiant">
-                    <br>
-                </div><!--end username-->
-                <div class="col-md-12"><!--password-->
-                    <input type="text" class="form-control" name="password" placeholder="Mot de passe">
-                    <br>
-                </div><!--end password-->
                 <div class="col-md-12"><!--confirm password-->
-                    <input type="text" class="form-control" name="confirm_password" placeholder="Confirmez le mot de passe">
+                    <input type="text" class="form-control" name="admin_password" placeholder="Mot de passe admin">
                     <br>
                 </div><!--end confirm password-->
-                <div class="form-check"><!--admin checkbox-->
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="cbx_admin">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Je suis admin
-                    </label>
-                </div><!--end admin checkbox-->
-                <div class="col-12"><!--envoyer button-->
-                    <input class="btn btn-dark" type="submit" value="Envoyer" name="register">
+                <div class="col-6"><!--envoyer button-->
+                    <input class="btn btn-dark" type="submit" value="Envoyer" name="admin_pass_submit">
+                </div><!--end envoyer button-->
+                <div class="col-6"><!--retour button-->
+                    <a href="register.php" class="btn btn-dark" role="button">Retour</a>
                 </div><!--end envoyer button-->
             </form><!--end registration form-->
         </div><!--end right column------------------------------------------------------------------------------------->
