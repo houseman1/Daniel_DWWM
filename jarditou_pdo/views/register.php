@@ -68,7 +68,7 @@ $db = connexionBase();
                 <br>
                 <div class="col-md-12"><!--nom-->
                     <input type="text" class="form-control" name="nom" placeholder="Nom">
-                    <small class="error"> <?php if(isset($_POST['register'])) {echo $nom_err;} ?> </small>
+                    <small class="error"> <?php if(isset($error_nom)) {echo $error_nom;} ?> </small>
                     <br>
                 </div><!--end nom-->
                 <div class="col-md-12"><!--prenom-->

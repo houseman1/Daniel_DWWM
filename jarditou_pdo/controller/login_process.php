@@ -14,7 +14,6 @@ if (file_exists("functions.php")) {
 //Assign the connection to the PDO object $db
 $db = connexionBase();
 
-
 //FUNCTIONS-----------------------------------------------
 
 //insert_details()-----------------------------------------
@@ -204,54 +203,51 @@ if(isset($_POST['register']))
 //LOGIN-----------------------------------------------------------------------------------------------------------------
 
 if(isset($_POST['login']))
-{
-    $username = ($_POST['username']);
-    $password = ($_POST['password']);
+    {
+    $username = test_input($_POST['username']);
+    $password = test_input($_POST['password']);
 
     //validate inputs are not empty
     //'return' prevents following code being executed
-    if($username == "" || $password == "")
+    /*if($username == "" || $password == "")
     {
         echo "Format invalide";
         return;
-    }
+    }*/
 
-    //Prepare a query to get the user's details from the database
-    $query = $db->prepare("
+
+        //Prepare a query to get the user's details from the database
+        $query = $db->prepare("
     
     SELECT * FROM users WHERE username=:username
     
     ");
 
-    $query->bindParam(":username", $username);
+        $query->bindParam(":username", $username);
 
-    $query->execute();
+        $query->execute();
 
-    //Assign the row details to 'user_row'
-    $user_row = $query->fetch();
+        //Assign the row details to 'user_row'
+        $user_row = $query->fetch();
 
-    //Compare the password entered with the hashed password in the database
-    //
-    if(password_verify($password, $user_row['password']))
-    {
-        $_SESSION['username'] = $username;
-        header("Location: ../views/client_home.php");
+        //Compare the password entered with the hashed password in the database
+        //
+        if (password_verify($password, $user_row['password'])) {
+            $_SESSION['username'] = $username;
+            header("Location: ../views/client_home.php");
+        } else {
+            echo "The username and password are incorrect";
+            return;
+        }
+
+
+        /* if(check_login($db, $username, $password))
+         {
+             $_SESSION['username'] = $username;
+             header("Location: login.php");
+         }
+         else {
+             echo "The username and password are incorrect";
+             return;
+         }*/
     }
-    else {
-        echo "The username and password are incorrect";
-        return;
-    }
-
-
-
-
-   /* if(check_login($db, $username, $password))
-    {
-        $_SESSION['username'] = $username;
-        header("Location: login.php");
-    }
-    else {
-        echo "The username and password are incorrect";
-        return;
-    }*/
-}

@@ -9,6 +9,12 @@ if (file_exists("../controller/functions.php")) {
 //Assign the connection to the PDO object $db
 $db = connexionBase();
 
+if(isset($_POST['login']))
+{
+    $username = ($_POST['username']);
+}
+
+
 ?>
 
 <?= template_header('Login') ?>
@@ -67,6 +73,7 @@ $db = connexionBase();
                 <br>
                 <div class="col-md-12"><!--username-->
                     <input type="text" class="form-control" name="username" placeholder="Identifiant">
+                    <small class="error"> <?php if(isset($username)) {echo $error_username;} ?> </small>
                     <br>
                 </div><!--end username-->
                 <div class="col-md-12"><!--password-->

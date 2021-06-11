@@ -1,0 +1,62 @@
+Delivered-To: houseman.daniel1@gmail.com
+Received: by 2002:a05:6a10:a6d7:0:0:0:0 with SMTP id q23csp397151pxv;
+        Fri, 11 Jun 2021 01:34:23 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxCMbxXVbzJ2i1ON6LC/PNafxRiWkbHCias7kAVwFN+/KUtLUdYFiFoxd5Dc+gyKMsulUoO
+X-Received: by 2002:a7b:c2f0:: with SMTP id e16mr2757910wmk.136.1623400463319;
+        Fri, 11 Jun 2021 01:34:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1623400463; cv=none;
+        d=google.com; s=arc-20160816;
+        b=eyGCm9TMlRB8gliEpnwwptWMMaTWpv9wf/HyZkUS7c50GBTVO0IOqunNWuXPghFT9Y
+         XOJv7pRCec+PuVeyxR5H3eKejxp+MubpZXyhe1fKXKg8M/hZqFPdITON+PUYSCNFUXlC
+         6YMR8LQz/ArGE+Evjhvb8QxsliVQzrZbCuQL74xbyUnWaXjsSfjLFS+9pFlhDns76Er6
+         lRKWKk/x4HzQyodvADRs5dVulTi2rxye1p4I9C/M9Bgc5Dy7t3Pd5sJsjXfa5wunW4yH
+         RuHW6Kv2vQLoPo4yPt/LxNLS5UuGru75Z7yzbzXp0NOAJ5GJWvknT5uE2Enzgg3WOaxQ
+         EHfg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:message-id:content-disposition:content-transfer-encoding
+         :subject:mime-version:to:from;
+        bh=HDnZ7lWJzsY0Xgs6WC/V4bfhyJMipYZKkt0A9yPJ9us=;
+        b=kilchB1/hFYw3DLNDNGcRMxlI/11DVp2PMw9XI/OIq/lySwAwSobs9DjjVq1vuVEEp
+         dWmrM7xe7bw8LDeS7PNMjYKZAd/CQmzLskGOOA2hSVb6ppH2D+tLVjaP1Aa9GvQi08AY
+         W8kYyMv32m3+o0oMvneOOhV5TqekoUy9n8h8jRbJOf6j2OMQ7ayDyb1/xNXEXHrEvzJm
+         3tIINsgwZwhjK3r9vf/N64t0DQQpzSeLtF/dI7Y34EcSpy0Zm3U6+TnFhdkkxtrg0MTq
+         LPUccgp7FMCIQAo9TrKl4SBPXf0i7x6j1KDeBUcGu3eai9MK2co0PdqAy04mGiVDTzKe
+         hg0Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of recrutement@4w.fr designates 178.33.0.129 as permitted sender) smtp.mailfrom=recrutement@4w.fr;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=4w.fr
+Return-Path: <recrutement@4w.fr>
+Received: from 4w.fr (4w.fr. [178.33.0.129])
+        by mx.google.com with ESMTPS id x10si5532282wru.103.2021.06.11.01.34.23
+        for <houseman.daniel1@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 11 Jun 2021 01:34:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of recrutement@4w.fr designates 178.33.0.129 as permitted sender) client-ip=178.33.0.129;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of recrutement@4w.fr designates 178.33.0.129 as permitted sender) smtp.mailfrom=recrutement@4w.fr;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=4w.fr
+Received: by serv-02.4w-serveur.fr (Postfix, from userid 30)
+	id 1940715E00D4; Fri, 11 Jun 2021 10:34:23 +0200 (CEST)
+From: recrutement@4w.fr
+To: Daniel Houseman <houseman.daniel1@gmail.com>
+MIME-Version: 1.0
+Subject: =?utf-8?Q?Re:_demande_de_stage_=2D_Houseman_Daniel?=
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+Content-Disposition: inline
+X-PPP-Message-ID: <20210611083423.13368.98436@serv-02.4w-serveur.fr>
+X-PPP-Vhost: 4w.fr
+Message-Id: <20210611083423.1940715E00D4@serv-02.4w-serveur.fr>
+Date: Fri, 11 Jun 2021 10:34:23 +0200 (CEST)
+
+Vous nous avez adressé votre candidature.
+
+Nous vous remercions de la confiance que vous nous témoignez.
+
+Après l’étude de votre candidature, un de nos consultants spécialisés prendra contact avec vous si votre profil est en adéquation avec la mission référencée ci-dessus
+
+Votre dossier sera alors conservé dans notre base de données informatique. 
+Sans manifestation dans un délais de 15 jours, veuillez considérer que nous ne donnons pas suite à votre candidature.
+
+
+
