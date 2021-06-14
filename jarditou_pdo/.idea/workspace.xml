@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="cab5e7fa-e840-4a60-a44c-b05fbb678643" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c774d9c-0bb3-43f3-b8b8-b97f6d26ef66.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c774d9c-0bb3-43f3-b8b8-b97f6d26ef66/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c774d9c-0bb3-43f3-b8b8-b97f6d26ef66/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c774d9c-0bb3-43f3-b8b8-b97f6d26ef66/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c774d9c-0bb3-43f3-b8b8-b97f6d26ef66/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+    <list default="true" id="ec825597-2929-4156-bb08-a5bca6c658e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/login_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login_process.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
-=======
-    <list default="true" id="74119a3d-c7c2-4bdd-8788-b351119986e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/admin_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/login_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login_process.php" afterDir="false" />
->>>>>>> 9d9b0ee0a61934b543aa9e4baac71e8e4a9c34be
       <change beforePath="$PROJECT_DIR$/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/example_contact_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/example_contact_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/PDO_login/example_form_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/PDO_login/example_form_validation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,62 +19,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectId" id="1tn5WVlmqz2ini4g1LqW8wrEQyw" />
-=======
-  <component name="ProjectId" id="1tkLJ7Y2CJa9LWb3CqZ5ojHwjPN" />
->>>>>>> 9d9b0ee0a61934b543aa9e4baac71e8e4a9c34be
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="15" />
+    </hideBySeverity>
+  </component>
+  <component name="ProjectId" id="1tvmjS3Js2qX1vv0abu2jaclwF4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/controller" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-      <changelist id="cab5e7fa-e840-4a60-a44c-b05fbb678643" name="Default Changelist" comment="" />
-      <created>1623392045369</created>
+      <changelist id="ec825597-2929-4156-bb08-a5bca6c658e2" name="Default Changelist" comment="" />
+      <created>1623658072144</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623392045369</updated>
-      <workItem from="1623392047071" duration="606000" />
-=======
-      <changelist id="74119a3d-c7c2-4bdd-8788-b351119986e9" name="Default Changelist" comment="" />
-      <created>1623308065821</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1623308065821</updated>
-      <workItem from="1623308067148" duration="15683000" />
->>>>>>> 9d9b0ee0a61934b543aa9e4baac71e8e4a9c34be
+      <updated>1623658072144</updated>
+      <workItem from="1623658073686" duration="15997000" />
+      <workItem from="1623697918085" duration="8785000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-<<<<<<< HEAD
-=======
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
->>>>>>> 9d9b0ee0a61934b543aa9e4baac71e8e4a9c34be
 </project>

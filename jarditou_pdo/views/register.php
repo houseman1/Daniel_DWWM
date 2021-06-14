@@ -22,7 +22,16 @@ $db = connexionBase();
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="login.php">Déjà Inscrit</a>
+                        <?php
+                            if($_SERVER['REQUEST_URI'] = '/jarditou_pdo/controller/input_validation.php')
+                            {
+                                    $login_path = '../views/login.php';
+                            }
+                            else {
+                                $login_path = 'login.php';
+                            }
+                        ?>
+                    <a class="nav-link" href= "<?php echo $login_path ?>" >Déjà Inscrit</a>
                 </li>
             </ul>
         </div>
@@ -62,44 +71,46 @@ $db = connexionBase();
 
         <!--right column----------------------------------------------------------------------------------------------->
         <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-info text-center text-white p-3">
-            <form method="POST" action="../controller/login_process.php"><!--registration form-->
+            <form method="POST" action="../controller/input_validation.php"><!--registration form-->
                 <br>
                 <h4>S'inscrire</h4>
                 <br>
                 <div class="col-md-12"><!--nom-->
-                    <input type="text" class="form-control" name="nom" placeholder="Nom">
-                    <small class="error"> <?php if(isset($error_nom)) {echo $error_nom;} ?> </small>
-                    <br>
+                    <input type="text" class="form-control" name="nom" placeholder="Nom" value="<?php if(isset($register_nom)) {echo $register_nom;} ?>">
+                    <small class="error"> <?php if(isset($register_nom_error)) {echo $register_nom_error;} ?> </small>
+                    <br> <br>
                 </div><!--end nom-->
                 <div class="col-md-12"><!--prenom-->
-                    <input type="text" class="form-control" name="prenom" placeholder="Pr&eacute;nom">
-                    <br>
+                    <input type="text" class="form-control" name="prenom" placeholder="Pr&eacute;nom" value="<?php if(isset($register_prenom)) {echo $register_prenom;} ?>">
+                    <small class="error"> <?php if(isset($register_prenom_error)) {echo $register_prenom_error;} ?> </small>
+                    <br> <br>
                 </div><!--end prenom-->
                 <div class="col-md-12"><!--email-->
-                    <input type="email" class="form-control" name="email" placeholder="E-mail">
-                    <br>
+                    <input type="email" class="form-control" name="email" placeholder="E-mail" value="<?php if(isset($register_email)) {echo $register_email;} ?>">
+                    <small class="error"> <?php if(isset($register_email_error)) {echo $register_email_error;} ?> </small>
+                    <br> <br>
                 </div><!--end email-->
                 <div class="col-md-12"><!--username-->
-                    <input type="text" class="form-control" name="username" placeholder="Identifiant">
-                    <br>
+                    <input type="text" class="form-control" name="username" placeholder="Identifiant" value="<?php if(isset($register_username)) {echo $register_username;} ?>">
+                    <small class="error"> <?php if(isset($register_username_error)) {echo $register_username_error;} ?> </small>
+                    <br> <br>
                 </div><!--end username-->
                 <div class="col-md-12"><!--password-->
-                    <input type="text" class="form-control" name="password" placeholder="Mot de passe">
-                    <br>
+                    <input type="password" class="form-control" name="password" placeholder="Mot de passe" value="<?php if(isset($register_password)) {echo $register_password;} ?>">
+                    <small class="error"> <?php if(isset($register_password_error)) {echo $register_password_error;} ?> </small>
+                    <br> <br>
                 </div><!--end password-->
                 <div class="col-md-12"><!--confirm password-->
-                    <input type="text" class="form-control" name="confirm_password" placeholder="Confirmez le mot de passe">
-                    <br>
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirmez le mot de passe">
+                    <small class="error"> <?php if(isset($register_confirm_password_error)) {echo $register_confirm_password_error;} ?> </small>
+                    <br> <br>
                 </div><!--end confirm password-->
-                <div class="form-check"><!--admin checkbox-->
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="cbx_admin">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Je suis admin
-                    </label>
-                </div><!--end admin checkbox-->
                 <div class="col-12"><!--envoyer button-->
                     <input class="btn btn-dark" type="submit" value="Envoyer" name="register">
                 </div><!--end envoyer button-->
+                <br>
+                <small id="pass_info" class="form-text"><sup>&lowast;</sup> Le mot de passe doit comporter au moins 8 caractères et doit inclure au moins
+                    une lettre majuscule, un chiffre et un caractère spécial</small>
             </form><!--end registration form-->
         </div><!--end right column------------------------------------------------------------------------------------->
     </div>

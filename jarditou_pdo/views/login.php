@@ -28,7 +28,17 @@ if(isset($_POST['login']))
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="register.php">S'incrire</a>
+                    <a class="nav-link"
+                        <?php
+                            if($_SERVER['REQUEST_URI'] = '/jarditou_pdo/controller/input_validation.php')
+                            {
+                                $register_path = '../views/register.php';
+                            }
+                            else {
+                                $register_path = 'register.php';
+                            }
+                        ?>
+                    <a class="nav-link" href= "<?php echo $register_path ?>" >S'incrire</a>
                 </li>
             </ul>
         </div>
@@ -67,18 +77,19 @@ if(isset($_POST['login']))
         </div><!--end left column------------------------------------------------------------------>
         <!--right column--------------------------------------------------------------------------->
         <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-warning text-center p-3">
-            <form method="POST" action="../controller/login_process.php"><!--login form-->
+            <form method="POST" action="../controller/input_validation.php"><!--login form-->
                 <br>
                 <h4>Login</h4>
                 <br>
                 <div class="col-md-12"><!--username-->
-                    <input type="text" class="form-control" name="username" placeholder="Identifiant">
-                    <small class="error"> <?php if(isset($username)) {echo $error_username;} ?> </small>
-                    <br>
+                    <input type="text" class="form-control" name="username" placeholder="Identifiant" value="<?php if(isset($login_username)) {echo $login_username;} ?>">
+                    <small class="error"> <?php if(isset($login_username_error)) {echo $login_username_error;} ?> </small>
+                    <br> <br>
                 </div><!--end username-->
                 <div class="col-md-12"><!--password-->
-                    <input type="password" class="form-control" name="password" placeholder="Mot de passe">
-                    <br>
+                    <input type="password" class="form-control" name="password" placeholder="Mot de passe" value="<?php if(isset($login_password)) {echo $login_password;} ?>">
+                    <small class="error"> <?php if(isset($login_password_error)) {echo $login_password_error;} ?> </small>
+                    <br> <br>
                 </div><!--end password-->
                 <div class="col-12"><!--envoyer button-->
                     <button class="btn btn-dark" type="submit" value="login" name="login">Se connecter</button>

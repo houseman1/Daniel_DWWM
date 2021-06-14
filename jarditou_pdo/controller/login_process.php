@@ -177,7 +177,7 @@ if(isset($_POST['register']))
     $date_inscrit = date_create()->format('Y-m-d H:i:s');
     $date_dern_conn = date_create()->format('Y-m-d H:i:s');
 
-    $cbx_admin = ($_POST['cbx_admin']);
+
 
     //Check that the inputs are not empty
     //'return' prevents the following code being executed
@@ -244,8 +244,7 @@ if(isset($_POST['register']))
 
 //LOGIN-----------------------------------------------------------------------------------------------------------------
 
-if(isset($_POST['login']))
-    {
+if(isset($_POST['login'])) {
     $username = test_input($_POST['username']);
     $password = test_input($_POST['password']);
 
@@ -261,42 +260,14 @@ if(isset($_POST['login']))
     }*/
 
 
-        //Prepare a query to get the user's details from the database
-        $query = $db->prepare("
+    //Prepare a query to get the user's details from the database
+    $query = $db->prepare("
     
     SELECT * FROM users WHERE username=:username
     
     ");
 
-<<<<<<< HEAD
-        $query->bindParam(":username", $username);
 
-        $query->execute();
-
-        //Assign the row details to 'user_row'
-        $user_row = $query->fetch();
-
-        //Compare the password entered with the hashed password in the database
-        //
-        if (password_verify($password, $user_row['password'])) {
-            $_SESSION['username'] = $username;
-            header("Location: ../views/client_home.php");
-        } else {
-            echo "The username and password are incorrect";
-            return;
-        }
-
-
-        /* if(check_login($db, $username, $password))
-         {
-             $_SESSION['username'] = $username;
-             header("Location: login.php");
-         }
-         else {
-             echo "The username and password are incorrect";
-             return;
-         }*/
-=======
     $query->bindParam(":username", $username);
 
     $query->execute();
@@ -306,16 +277,43 @@ if(isset($_POST['login']))
 
     //Compare the password entered with the hashed password in the database
     //
-    if(password_verify($password, $user_row['password']))
-    {
-            modif_date_dern($db, $username, $date_dern_conn);
-            $_SESSION['username'] = $username;
-            header("Location: ../views/client_home.php");
-    }
-    else {
+    if (password_verify($password, $user_row['password'])) {
+        $_SESSION['username'] = $username;
+        header("Location: ../views/client_home.php");
+    } else {
         echo "The username and password are incorrect";
         return;
     }
+
+
+    /* if(check_login($db, $username, $password))
+     {
+         $_SESSION['username'] = $username;
+         header("Location: login.php");
+     }
+     else {
+         echo "The username and password are incorrect";
+         return;
+     }*/
+
+    $query->bindParam(":username", $username);
+
+    $query->execute();
+
+    //Assign the row details to 'user_row'
+    $user_row = $query->fetch();
+
+    //Compare the password entered with the hashed password in the database
+    //
+    if (password_verify($password, $user_row['password'])) {
+        modif_date_dern($db, $username, $date_dern_conn);
+        $_SESSION['username'] = $username;
+        header("Location: ../views/client_home.php");
+    } else {
+        echo "The username and password are incorrect";
+        return;
+    }
+}
 
 
 
@@ -324,5 +322,4 @@ if(isset($_POST['login']))
     {
         $_SESSION['username'] = $username;
         header("Location: login.php");
->>>>>>> 9d9b0ee0a61934b543aa9e4baac71e8e4a9c34be
-    }
+    }*/

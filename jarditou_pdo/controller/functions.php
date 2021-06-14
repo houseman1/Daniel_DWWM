@@ -41,8 +41,10 @@ echo <<<EOT
     <header class="d-none d-sm-block">
         <div class="row">    
             <img src="src/img/jarditou_logo.jpg" class="image-responsive col-3" alt="logo" title="logo">
-            <div class="col-5"></div>
-            <h2 class="col-3">Tout le jardin</h2>
+            <!--<div class="col-5"></div>-->
+            <div class="d-flex col-9 flex-row-reverse">
+                <h4>Tout le jardin</h4>
+            </div>
         </div>
     </header>
 EOT;
