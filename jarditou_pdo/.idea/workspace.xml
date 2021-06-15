@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ec825597-2929-4156-bb08-a5bca6c658e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/login_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
     </list>
@@ -45,6 +44,11 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dan\Desktop\daniel_dwwm\daniel_dwwm\jarditou_pdo\controller" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623658072144</updated>
       <workItem from="1623658073686" duration="15997000" />
-      <workItem from="1623697918085" duration="8785000" />
+      <workItem from="1623697918085" duration="23836000" />
     </task>
     <servers />
   </component>

@@ -20,10 +20,13 @@ else
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="views/register.php">S'incrire</a>
+                    <a class="nav-link" href="views/register.php">Nouveau client</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="views/login.php">Login</a>
+                    <a class="nav-link" href="views/login.php">Déjà client</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="views/contact.php">Contact</a>
                 </li>
             </ul>
 
@@ -64,9 +67,9 @@ else
             <!-- right column -->
             <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-light text-center p-3">
                 <br> <br>
-                <a href="views/register.php" class="btn btn-info" role="button">Nouveaux Clients</a>
+                <a href="views/register.php" class="btn btn-info" role="button">Nouveau Client</a>
                 <br> <br>
-                <a href="views/login.php" class="btn btn-warning" role="button">Déjà Inscrit</a>
+                <a href="views/login.php" class="btn btn-warning" role="button">Déjà Client</a>
             </div>
         </div>
     </main>
