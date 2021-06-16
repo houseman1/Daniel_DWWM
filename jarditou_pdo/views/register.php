@@ -91,37 +91,37 @@ $db = connexionBase();
                 <h4 class="text-center">Inscrivez-vous</h4>
                 <br>
                 <div class="col-md-12"><!--nom-->
-                    <label for="nom">Nom</label>
+                    <label class="sr-only" for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" placeholder="Nom" value="<?php if(isset($register_nom)) {echo $register_nom;} ?>">
                     <small class="error"> <?php if(isset($register_nom_error)) {echo $register_nom_error;} ?> </small>
                     <br> <br>
                 </div><!--end nom-->
                 <div class="col-md-12"><!--prenom-->
-                    <label for="prenom">Prenom</label>
+                    <label class="sr-only" for="prenom">Prenom</label>
                     <input type="text" class="form-control" name="prenom" placeholder="Pr&eacute;nom" value="<?php if(isset($register_prenom)) {echo $register_prenom;} ?>">
                     <small class="error"> <?php if(isset($register_prenom_error)) {echo $register_prenom_error;} ?> </small>
                     <br> <br>
                 </div><!--end prenom-->
                 <div class="col-md-12"><!--email-->
-                    <label for="email">Email</label>
+                    <label class="sr-only" for="email">Email</label>
                     <input type="email" class="form-control" name="email" placeholder="E-mail" value="<?php if(isset($register_email)) {echo $register_email;} ?>">
                     <small class="error"> <?php if(isset($register_email_error)) {echo $register_email_error;} ?> </small>
                     <br> <br>
                 </div><!--end email-->
                 <div class="col-md-12"><!--username-->
-                    <label for="username">Identifiant</label>
+                    <label class="sr-only" for="username">Identifiant</label>
                     <input type="text" class="form-control" name="username" placeholder="Identifiant" value="<?php if(isset($register_username)) {echo $register_username;} ?>">
                     <small class="error"> <?php if(isset($register_username_error)) {echo $register_username_error;} ?> </small>
                     <br> <br>
                 </div><!--end username-->
                 <div class="col-md-12"><!--password-->
-                    <label for="password">Mot de passe</label>
+                    <label class="sr-only" for="password">Mot de passe</label>
                     <input type="password" class="form-control" name="password" placeholder="Mot de passe" value="<?php if(isset($register_password)) {echo $register_password;} ?>">
                     <small class="error"> <?php if(isset($register_password_error)) {echo $register_password_error;} ?> </small>
                     <br> <br>
                 </div><!--end password-->
                 <div class="col-md-12"><!--confirm password-->
-                    <label for="confirm_password">Confirmez le mot de passe</label>
+                    <label class="sr-only" for="confirm_password">Confirmez le mot de passe</label>
                     <input type="password" class="form-control" name="confirm_password" placeholder="Confirmez le mot de passe">
                     <small class="error"> <?php if(isset($register_confirm_password_error)) {echo $register_confirm_password_error;} ?> </small>
                     <br> <br>

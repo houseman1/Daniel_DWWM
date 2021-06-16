@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ec825597-2929-4156-bb08-a5bca6c658e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/input_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/input_validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
     </list>
@@ -58,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623658072144</updated>
       <workItem from="1623658073686" duration="15997000" />
-      <workItem from="1623697918085" duration="23836000" />
+      <workItem from="1623697918085" duration="66925000" />
     </task>
     <servers />
   </component>

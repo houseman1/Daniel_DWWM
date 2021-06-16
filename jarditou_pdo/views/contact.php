@@ -71,78 +71,203 @@ $db = connexionBase();
 
 <!-- main ---------------------------------------------------------------------------------------->
 <main class="max-width">
-    <div class="row"><!--two columns in main-->
-        <!-- left column ------------------------------------------------------------------------->
-        <div id="leftColumnAccueil" class="col-12 col-sm-6 col-md-7 col-lg-8 col-xl-9">
-            <!--registration form----------------------------------------------------------------->
-            <div method="POST" action="../controller/input_validation.php">
-                <br>
-                <h4>Nous contacter</h4>
-                <br>
-                <!--name, first name and gender inputs-->
-                <div class="row justify-content-around"
-                    <!--nom-->
-                    <div class="col-md-4">
-                        <label for="nom">Nom</label>
-                        <input type="text" class="form-control" name="nom" placeholder="Indiquez ici votre nom de famille" value="<?php if(isset($contact_nom)) {echo $contact_nom;} ?>">
-                        <small class="error"> <?php if(isset($contact_nom_error)) {echo $contact_nom_error;} ?> </small>
-                        <br> <br>
-                    </div><!--end nom-->
-                    <!--prenom-->
-                    <div class="col-md-4">
-                        <label for="prenom">Prenom</label>
-                        <input type="text" class="form-control" name="prenom" placeholder="Indiquez ici votre pr&eacute;nom" value="<?php if(isset($contact_prenom)) {echo $contact_prenom;} ?>">
-                        <small class="error"> <?php if(isset($contact_prenom_error)) {echo $contact_prenom_error;} ?> </small>
-                        <br> <br>
-                    </div><!--end prenom-->
-                    <div class="col-md-4">
-                        <label for="gender">Sexe</label>
-                        <div class="form-check-inline">
-                            <input type="radio"
-                        </div>
-                    </div>
-                </div><!--end name, first name and gender inputs-->
-                <!--email-->
-                <div class="col-md-12">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Indiquez ici l'adresse email à laquelle vous souhaitez recevoir les messages" value="<?php if(isset($contact_email)) {echo $contact_email;} ?>">
-                    <small class="error"> <?php if(isset($contact_email_error)) {echo $contact_email_error;} ?> </small>
-                    <br> <br>
-                </div><!--end email-->
+    <div col-12>
+        <!--registration form----------------------------------------------------------------->
+        <form method="POST" action="../controller/input_validation.php">
+            <br>
+            <h4 class="mb-3">Nous contacter</h4>
+            <!--surname, first name and date of birth inputs row----------->
+            <div class="form-row justify-content align-items-start mb-3"
+                <!--surname-->
+                <div class="col-auto">
+                    <label class="sr-only" for="nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" placeholder="Nom" value="<?php if(isset($contact_nom)) {echo $contact_nom;} ?>">
+                    <small class="error text-danger"> <?php if(isset($contact_nom_error)) {echo $contact_nom_error;} ?> </small>
+                </div><!--end surname-->
+                <!--first name-->
+                <div class="col-auto">
+                    <label class="sr-only" for="prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" placeholder="Pr&eacute;nom" value="<?php if(isset($contact_prenom)) {echo $contact_prenom;} ?>">
+                    <small class="error text-danger"> <?php if(isset($contact_prenom_error)) {echo $contact_prenom_error;} ?> </small>
+                </div><!--end first name-->
                 <!--date of birth-->
-                <div class="col-md-12">
-                    <label for="dob">Date de naissance</label>
-                    <input type="text" class="form-control" name="dob" placeholder="Indiquez ici votre date de naissance au format suivant : jj/mm/aaaa" value="<?php if(isset($contact_dob)) {echo $contact_dob;} ?>">
-                    <small class="error"> <?php if(isset($contact_dob_error)) {echo $contact_dob_error;} ?> </small>
-                    <br> <br>
+                <div class="col-auto datepicker">
+                    <span class="form-group form-inline my-0">
+                        <input type="date" class="form-control mr-2" name="dob" placeholder="Date de naissance" value="<?php if(isset($contact_dob)) {echo $contact_dob;} ?>">
+                        <label class="col-form-label" for="dob">Date de naissance </label>
+                    </span>
+                    <small class="error text-danger"> <?php if(isset($contact_dob_error)) {echo $contact_dob_error;} ?> </small>
                 </div><!--end date of birth-->
-                <!--code postal-->
-                <div class="col-md-12">
-                    <label for="code_postal">Code postal</label>
-                    <input type="text" class="form-control" name="code_postal" placeholder="Indiquez ici votre code postal" value="<?php if(isset($contact_code_postal)) {echo $contact_code_postal;} ?>">
-                    <small class="error"> <?php if(isset($contact_code_postal_error)) {echo $contact_code_postal_error;} ?> </small>
-                    <br> <br>
-                </div><!--end code postal-->
+            </div><!--end surname, first name and date of birth inputs row----------->
+            <!--gender inputs row----------->
+            <!--gender radios-->
+            <div class="form-row justify-content align-items-start ml-2"
+                <div class="col-auto">
+                    <label class="sr-only" for="gender">Sexe : </label>
+                    <div class="form-check-inline">
+                        <input type="radio" class="form-check-input" value="Féminin" name="optradio"
+                            <?php
+                            if(isset($_POST['optradio']))
+                            {
+                                if($_POST['optradio'] == 'Féminin')
+                                {
+                                    echo "checked";
+                                }
+                            }
+                            ?>
+                        >Féminin
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" class="form-check-input" value="Masculin" name="optradio"
+                            <?php
+                            if(isset($_POST['optradio']))
+                            {
+                                if($_POST['optradio'] == 'Masculin')
+                                {
+                                    echo "checked";
+                                }
+                            }
+                            ?>
+                        >Masculin
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" class="form-check-input" value="Neutre" name="optradio"
+                            <?php
+                            if(isset($_POST['optradio']))
+                            {
+                                if($_POST['optradio'] == 'Neutre')
+                                {
+                                    echo "checked";
+                                }
+                            }
+                            ?>
+                        >Neutre
+                    </div>
+                </div><!--end gender radios-->
+
+                <small class="error text-danger mb-3"> <?php if(isset($contact_gender_error)) {echo $contact_gender_error;} ?> </small>
+            </div>
+            <!--address, postcode and town inputs row----------->
+            <div class="form-row justify-content-start align-items-start mt-3 mb-3">
                 <!--address-->
-                <div class="col-md-12">
-                    <label for="address">Adresse</label>
-                    <input type="text" class="form-control" name="address" placeholder="Indiquez ici la première ligne de votre adresse" value="<?php if(isset($contact_address)) {echo $contact_address;} ?>">
-                    <small class="error"> <?php if(isset($contact_address_error)) {echo $contact_address_error;} ?> </small>
-                    <br> <br>
+                <div class="col-auto">
+                    <label class="sr-only" for="address">Adresse</label>
+                    <input type="text" class="form-control" name="address" placeholder="Adresse" value="<?php if(isset($contact_address)) {echo $contact_address;} ?>">
+                    <small class="error text-danger"> <?php if(isset($contact_address_error)) {echo $contact_address_error;} ?> </small>
                 </div><!--end address-->
-                <div class="col-12"><!--envoyer button-->
-                    <input class="btn btn-dark" type="submit" value="Envoyer" name="register">
-                </div><!--end envoyer button-->
-                <br>
-                <small id="pass_info" class="form-text"><sup>&lowast;</sup> Le mot de passe doit comporter au moins 8 caractères et doit inclure au moins
-                    une lettre majuscule, un chiffre et un caractère spécial</small>
-            </form><!--end registration form---------------------------------------------------------------->
-        </div><!--end left column--------------------------------------------------------------------------->
+                <!--postcode-->
+                <div class="col-auto">
+                    <label class="sr-only" for="postcode">Code postal</label>
+                    <input type="text" class="form-control" name="postcode" placeholder="Code postal" value="<?php if(isset($contact_postcode)) {echo $contact_postcode;} ?>">
+                    <small class="error text-danger"> <?php if(isset($contact_postcode_error)) {echo $contact_postcode_error;} ?> </small>
+                </div><!--end code postal-->
+                <!--town-->
+                <div class="col-auto">
+                    <label class="sr-only" for="town">Ville</label>
+                    <input type="text" class="form-control" name="town" placeholder="Ville" value="<?php if(isset($contact_town)) {echo $contact_town;} ?>">
+                    <small class="error text-danger"> <?php if(isset($contact_town_error)) {echo $contact_town_error;} ?> </small>
+                </div><!--end town-->
+            </div><!--end address, postcode and town inputs row----------->
+            <!--email-->
+            <div class="form-row justify-content-start align-items-center mb-5">
+                <div class="col-auto">
+                    <label class="sr-only" for="email">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Adresse e-mail" value="<?php if(isset($contact_email)) {echo $contact_email;} ?>">
+                    <small class="error text-danger"> <?php if(isset($contact_email_error)) {echo $contact_email_error;} ?> </small>
+                </div>
+            </div><!--end email-->
 
+            <div>
+                <h4 class="mb-3">Votre demande</h4>
+            </div>
 
-        <!--right column----------------------------------------------------------------------------------------------->
-        <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-light p-3">
+            <!--subject and question input row----------->
+            <div class="form-row justify-content-start align-items-start mb-3">
+                <!--subject-->
+                <div class="col-auto mb-3">
+                    <label class="sr-only" for="subject">Votre sujet</label>
+                    <select class="custom-select" name="subject" aria-label="Default select example">
+                        <option selected disabled value="0">Veuillez s&eacute;l&eacute;ctionner</option>
+                        <option value="1" <?php
+                            if(isset($contact_subject))
+                            {
+                                if($contact_subject == 1)
+                                    {
+                                        echo "selected";
+                                    }
+                            } ?> >Mes commandes</option>
+                        <option value="2" <?php
+                            if(isset($contact_subject))
+                            {
+                                if($contact_subject == 2)
+                                {
+                                    echo "selected";
+                                }
+                            } ?> >Questions sur un produit</option>
+                        <option value="3" <?php
+                            if(isset($contact_subject))
+                            {
+                                if($contact_subject == 3)
+                                {
+                                    echo "selected";
+                                }
+                            } ?> >R&eacute;clamation</option>
+                        <option value="4" <?php
+                            if(isset($contact_subject))
+                            {
+                                if($contact_subject == 4)
+                                {
+                                    echo "selected";
+                                }
+                            } ?> >Autres</option>
+                    </select>
+                    <small class="error text-danger"> <?php if(isset($contact_subject_error)) {echo $contact_subject_error;} ?> </small>
+                </div><!--end subject-->
+                <!--question-->
+                <div class="col-md-6 mb-3">
+                    <label class="sr-only" for="question">Votre question</label>
+                    <textarea class="form-control" name="question" placeholder="Veuillez saisir votre question" rows=2><?php if(isset($contact_question)) {echo $contact_question;} ?></textarea><!--end address-->
+                    <small class="error text-danger"> <?php if(isset($contact_question_error)) {echo $contact_question_error;} ?> </small>
+                </div>
+            </div><!--end subject and question input row----------->
 
-        </div><!--end right column------------------------------------------------------------------------------------->
-    </div><!--end two columns in main------------------------------------------------------------->
+            <!--checkbox-->
+            <div class="form-check mb-3 ml-2">
+                <input type="checkbox" class="form-check-input" name="jaccepte">
+                <label class="form-check-label font-weight-light" for="jaccepte">J'accepte le traitment de ce formulaire</label>
+                <small class="error text-danger"> <?php if(isset($contact_jaccepte_error)) {echo $contact_jaccepte_error;} ?> </small>
+            </div>
+            <div class="ml-0"><!--envoyer button-->
+                <input class="btn btn-dark" type="submit" value="Envoyer" name="contact">
+            </div><!--end envoyer button-->
+            <br>
+        </form><!--end registration form---------------------------------------------------------------->
+    </div><!--end div--------------------------------------------------------------------------->
 </main>
+
+<div class="row"><!--bottom navbar --------------------------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark col-12">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" ></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div><!--end bottom navbar-->
+
+
+
+<?=template_footer()?>

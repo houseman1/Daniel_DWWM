@@ -19,6 +19,8 @@ if(isset($_POST['login']))
 
 <?= template_header('Login') ?>
 
+
+
 <div class="row"><!--navbar----------->
     <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
         <a class="navbar-brand" href="../index">Jarditou</a>
@@ -101,13 +103,13 @@ if(isset($_POST['login']))
                 <h4 class="text-center">Login</h4>
                 <br>
                 <div class="col-md-12"><!--username-->
-                    <label for="username">Identifiant</label>
+                    <label class="sr-only" for="username">Identifiant</label>
                     <input type="text" class="form-control" name="username" placeholder="Identifiant" value="<?php if(isset($login_username)) {echo $login_username;} ?>">
                     <small class="error"> <?php if(isset($login_username_error)) {echo $login_username_error;} ?> </small>
                     <br> <br>
                 </div><!--end username-->
                 <div class="col-md-12"><!--password-->
-                    <label for="password">Mot de passe</label>
+                    <label class="sr-only" for="password">Mot de passe</label>
                     <input type="password" class="form-control" name="password" placeholder="Mot de passe" value="<?php if(isset($login_password)) {echo $login_password;} ?>">
                     <small class="error"> <?php if(isset($login_password_error)) {echo $login_password_error;} ?> </small>
                     <br> <br>
