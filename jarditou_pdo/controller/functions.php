@@ -29,7 +29,7 @@ echo <<<EOT
     <head>
         <!-- Required meta tags -->
         <!-- Specify character encoding -->
-        <meta charset="utf-8">
+        <meta charset="utf8_unicode_ci">
         <!-- Responsive viewport meta tag -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->

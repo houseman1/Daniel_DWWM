@@ -76,34 +76,42 @@ $db = connexionBase();
         <form method="POST" action="../controller/input_validation.php">
             <br>
             <h4 class="mb-3">Nous contacter</h4>
-            <!--surname, first name and date of birth inputs row----------->
-            <div class="form-row justify-content align-items-start mb-3"
+        <!--surname, first name and date of birth inputs row----------->
+            <!--'form-row' combined with 'col-sm-4' displays three columns on tablets and desktops-->
+            <!--The inputs are stacked on mobiles-->
+            <!--'mb-3' ensures a bottom margin on each div containing a label, input and small.  This improves the readability of error messages-->
+            <!--'sr-only' label class hides the label to sighted users but makes the label visible to screen readers and search engines-->
+            <div class="form-row justify-content align-items-start mb-3">
                 <!--surname-->
-                <div class="col-auto">
-                    <label class="sr-only" for="nom">Nom</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" placeholder="Nom" value="<?php if(isset($contact_nom)) {echo $contact_nom;} ?>">
                     <small class="error text-danger"> <?php if(isset($contact_nom_error)) {echo $contact_nom_error;} ?> </small>
                 </div><!--end surname-->
                 <!--first name-->
-                <div class="col-auto">
-                    <label class="sr-only" for="prenom">Prenom</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="prenom">Prenom</label>
                     <input type="text" class="form-control" name="prenom" placeholder="Pr&eacute;nom" value="<?php if(isset($contact_prenom)) {echo $contact_prenom;} ?>">
                     <small class="error text-danger"> <?php if(isset($contact_prenom_error)) {echo $contact_prenom_error;} ?> </small>
                 </div><!--end first name-->
                 <!--date of birth-->
-                <div class="col-auto datepicker">
-                    <span class="form-group form-inline my-0">
-                        <input type="date" class="form-control mr-2" name="dob" placeholder="Date de naissance" value="<?php if(isset($contact_dob)) {echo $contact_dob;} ?>">
-                        <label class="col-form-label" for="dob">Date de naissance </label>
+                <div class="col-sm-4 mb-3 datepicker" >
+                    <span class="form-group">
+                        <label for="dob">Date de naissance</label>
+                        <input type="date" class="form-control" name="dob" value="<?php if(isset($contact_dob)) {echo $contact_dob;} ?>">
                     </span>
                     <small class="error text-danger"> <?php if(isset($contact_dob_error)) {echo $contact_dob_error;} ?> </small>
                 </div><!--end date of birth-->
             </div><!--end surname, first name and date of birth inputs row----------->
-            <!--gender inputs row----------->
+        <!--gender inputs row----------->
+            <!--'form-row' combined with 'col-sm-4' displays three columns on tablets and desktops-->
+            <!--The inputs are stacked on mobiles-->
+            <!--'my-3' ensures a top and bottom margin on the inline radios-->
+            <!--'sr-only' label class hides the label to sighted users but makes the label visible to screen readers and search engines-->
             <!--gender radios-->
-            <div class="form-row justify-content align-items-start ml-2"
-                <div class="col-auto">
-                    <label class="sr-only" for="gender">Sexe : </label>
+            <div class="form-row justify-content align-items-start ml-1"
+                <div class="col-sm-4 my-0">
+                    <label class="mr-2" for="gender">Sexe : </label>
                     <div class="form-check-inline">
                         <input type="radio" class="form-check-input" value="Féminin" name="optradio"
                             <?php
@@ -143,49 +151,54 @@ $db = connexionBase();
                             ?>
                         >Neutre
                     </div>
-                </div><!--end gender radios-->
-
+                </div>
                 <small class="error text-danger mb-3"> <?php if(isset($contact_gender_error)) {echo $contact_gender_error;} ?> </small>
-            </div>
-            <!--address, postcode and town inputs row----------->
+            </div><!--end gender radios-->
+        <!--address, postcode and town inputs row----------->
+            <!--'form-row' combined with 'col-sm-4' displays three columns on tablets and desktops-->
+            <!--The inputs are stacked on mobiles-->
+            <!--'mb-3' ensures a bottom margin on each div containing a label, input and small.  This improves the readability of error messages-->
+            <!--'sr-only' label class hides the label to sighted users but makes the label visible to screen readers and search engines-->
             <div class="form-row justify-content-start align-items-start mt-3 mb-3">
                 <!--address-->
-                <div class="col-auto">
-                    <label class="sr-only" for="address">Adresse</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="address">Adresse</label>
                     <input type="text" class="form-control" name="address" placeholder="Adresse" value="<?php if(isset($contact_address)) {echo $contact_address;} ?>">
                     <small class="error text-danger"> <?php if(isset($contact_address_error)) {echo $contact_address_error;} ?> </small>
                 </div><!--end address-->
                 <!--postcode-->
-                <div class="col-auto">
-                    <label class="sr-only" for="postcode">Code postal</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="postcode">Code postal</label>
                     <input type="text" class="form-control" name="postcode" placeholder="Code postal" value="<?php if(isset($contact_postcode)) {echo $contact_postcode;} ?>">
                     <small class="error text-danger"> <?php if(isset($contact_postcode_error)) {echo $contact_postcode_error;} ?> </small>
                 </div><!--end code postal-->
                 <!--town-->
-                <div class="col-auto">
-                    <label class="sr-only" for="town">Ville</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="town">Ville</label>
                     <input type="text" class="form-control" name="town" placeholder="Ville" value="<?php if(isset($contact_town)) {echo $contact_town;} ?>">
                     <small class="error text-danger"> <?php if(isset($contact_town_error)) {echo $contact_town_error;} ?> </small>
                 </div><!--end town-->
             </div><!--end address, postcode and town inputs row----------->
             <!--email-->
             <div class="form-row justify-content-start align-items-center mb-5">
-                <div class="col-auto">
-                    <label class="sr-only" for="email">Email</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" placeholder="Adresse e-mail" value="<?php if(isset($contact_email)) {echo $contact_email;} ?>">
                     <small class="error text-danger"> <?php if(isset($contact_email_error)) {echo $contact_email_error;} ?> </small>
                 </div>
             </div><!--end email-->
-
             <div>
                 <h4 class="mb-3">Votre demande</h4>
             </div>
-
-            <!--subject and question input row----------->
+        <!--subject and question input row----------->
+            <!--'form-row' combined with 'col-sm-4' displays three columns on tablets and desktops-->
+            <!--The inputs are stacked on mobiles-->
+            <!--'mb-3' ensures a bottom margin on each div containing a label, input and small.  This improves the readability of error messages-->
+            <!--'sr-only' label class hides the label to sighted users but makes the label visible to screen readers and search engines-->
             <div class="form-row justify-content-start align-items-start mb-3">
                 <!--subject-->
-                <div class="col-auto mb-3">
-                    <label class="sr-only" for="subject">Votre sujet</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="subject">Votre sujet</label>
                     <select class="custom-select" name="subject" aria-label="Default select example">
                         <option selected disabled value="0">Veuillez s&eacute;l&eacute;ctionner</option>
                         <option value="1" <?php
@@ -224,23 +237,21 @@ $db = connexionBase();
                     <small class="error text-danger"> <?php if(isset($contact_subject_error)) {echo $contact_subject_error;} ?> </small>
                 </div><!--end subject-->
                 <!--question-->
-                <div class="col-md-6 mb-3">
-                    <label class="sr-only" for="question">Votre question</label>
+                <div class="col-sm-4 mb-3">
+                    <label for="question">Votre question</label>
                     <textarea class="form-control" name="question" placeholder="Veuillez saisir votre question" rows=2><?php if(isset($contact_question)) {echo $contact_question;} ?></textarea><!--end address-->
                     <small class="error text-danger"> <?php if(isset($contact_question_error)) {echo $contact_question_error;} ?> </small>
                 </div>
             </div><!--end subject and question input row----------->
-
             <!--checkbox-->
             <div class="form-check mb-3 ml-2">
                 <input type="checkbox" class="form-check-input" name="jaccepte">
                 <label class="form-check-label font-weight-light" for="jaccepte">J'accepte le traitment de ce formulaire</label>
                 <small class="error text-danger"> <?php if(isset($contact_jaccepte_error)) {echo $contact_jaccepte_error;} ?> </small>
-            </div>
-            <div class="ml-0"><!--envoyer button-->
+            </div><!--end checkbox-->
+            <div class="ml-0 mb-3"><!--envoyer button-->
                 <input class="btn btn-dark" type="submit" value="Envoyer" name="contact">
             </div><!--end envoyer button-->
-            <br>
         </form><!--end registration form---------------------------------------------------------------->
     </div><!--end div--------------------------------------------------------------------------->
 </main>
@@ -269,5 +280,5 @@ $db = connexionBase();
 </div><!--end bottom navbar-->
 
 
-
 <?=template_footer()?>
+

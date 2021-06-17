@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 //LOGIN FORM -----------------------------------------------------------------------------------------------------------
 if(isset($_POST['login']))
 {
@@ -57,14 +55,14 @@ if(isset($_POST['register']))
     $register_error_count = 0;
 
     //test nom
-    if(empty($safe_nom))
+    if(empty($register_nom))
     {
         $register_nom_error = "Veuillez saisir un nom";
         $register_error_count++;
     } else
     {
 
-        if(!preg_match( "/^[a-zA-Z-' ]*$/", $contact_nom))
+        if(!preg_match( "/^[a-zA-Z-' ]*$/", $register_nom))
         {
             $register_nom_error = "Format invalide - seuls les lettres, les tirets, les apostrophes et les espaces sont autorisés";
             $register_error_count++;
@@ -79,7 +77,7 @@ if(isset($_POST['register']))
     } else
     {
 
-        if(!preg_match( "/^[a-zA-Z-' ]*$/", $safe_prenom))
+        if(!preg_match( "/^[a-zA-Z-' ]*$/", $register_prenom))
         {
             $register_prenom_error = "Format invalide - seuls les lettres, les tirets, les apostrophes et les espaces sont autorisés";
             $register_error_count++;
@@ -138,6 +136,8 @@ if(isset($_POST['register']))
         }
     }
 
+
+    //count errors and log in if there are none
     if($register_error_count === 0)
     {
         include "login_process.php";
@@ -215,7 +215,7 @@ if(isset($_POST['contact']))
     //test date of birth
     if(empty($contact_dob))
     {
-        $contact_dob_error = "Veuillez cliquer sur l'icône pour entrer votre date de naissance";
+        $contact_dob_error = "Veuillez séléctionner votre date de naissance";
         $contact_error_count++;
     }
 

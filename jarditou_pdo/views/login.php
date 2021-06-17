@@ -1,4 +1,6 @@
 <?php
+
+
 //include functions: connexionBase, header and footer
 if (file_exists("../controller/functions.php")) {
     include("../controller/functions.php");
@@ -99,22 +101,18 @@ if(isset($_POST['login']))
         <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-warning p-3">
             <!--login form------------------------------------------------------------------------->
             <form method="POST" action="../controller/input_validation.php">
-                <br>
                 <h4 class="text-center">Login</h4>
-                <br>
-                <div class="col-md-12"><!--username-->
-                    <label class="sr-only" for="username">Identifiant</label>
+                <div class="col-md-12 my-3"><!--username-->
+                    <label class="sr-only sr-only-focusable" for="username">Identifiant</label>
                     <input type="text" class="form-control" name="username" placeholder="Identifiant" value="<?php if(isset($login_username)) {echo $login_username;} ?>">
                     <small class="error"> <?php if(isset($login_username_error)) {echo $login_username_error;} ?> </small>
-                    <br> <br>
                 </div><!--end username-->
-                <div class="col-md-12"><!--password-->
+                <div class="col-md-12 my-3"><!--password-->
                     <label class="sr-only" for="password">Mot de passe</label>
                     <input type="password" class="form-control" name="password" placeholder="Mot de passe" value="<?php if(isset($login_password)) {echo $login_password;} ?>">
                     <small class="error"> <?php if(isset($login_password_error)) {echo $login_password_error;} ?> </small>
-                    <br> <br>
                 </div><!--end password-->
-                <div class="col-12"><!--envoyer button-->
+                <div class="col-12 my-3"><!--envoyer button-->
                     <button class="btn btn-dark" type="submit" value="login" name="login">Se connecter</button>
                 </div><!--end envoyer button-->
             </form><!--end login form------------------------------------------------------------->

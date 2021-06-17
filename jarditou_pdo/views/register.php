@@ -87,49 +87,40 @@ $db = connexionBase();
         <!--right column----------------------------------------------------------------------------------------------->
         <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-info text-white p-3">
             <form method="POST" action="../controller/input_validation.php"><!--registration form-->
-                <br>
                 <h4 class="text-center">Inscrivez-vous</h4>
-                <br>
-                <div class="col-md-12"><!--nom-->
+                <div class="col-md-12 my-3"><!--nom-->
                     <label class="sr-only" for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" placeholder="Nom" value="<?php if(isset($register_nom)) {echo $register_nom;} ?>">
                     <small class="error"> <?php if(isset($register_nom_error)) {echo $register_nom_error;} ?> </small>
-                    <br> <br>
                 </div><!--end nom-->
-                <div class="col-md-12"><!--prenom-->
+                <div class="col-md-12 my-3"><!--prenom-->
                     <label class="sr-only" for="prenom">Prenom</label>
                     <input type="text" class="form-control" name="prenom" placeholder="Pr&eacute;nom" value="<?php if(isset($register_prenom)) {echo $register_prenom;} ?>">
                     <small class="error"> <?php if(isset($register_prenom_error)) {echo $register_prenom_error;} ?> </small>
-                    <br> <br>
                 </div><!--end prenom-->
-                <div class="col-md-12"><!--email-->
+                <div class="col-md-12 my-3"><!--email-->
                     <label class="sr-only" for="email">Email</label>
                     <input type="email" class="form-control" name="email" placeholder="E-mail" value="<?php if(isset($register_email)) {echo $register_email;} ?>">
                     <small class="error"> <?php if(isset($register_email_error)) {echo $register_email_error;} ?> </small>
-                    <br> <br>
                 </div><!--end email-->
-                <div class="col-md-12"><!--username-->
+                <div class="col-md-12 my-3"><!--username-->
                     <label class="sr-only" for="username">Identifiant</label>
                     <input type="text" class="form-control" name="username" placeholder="Identifiant" value="<?php if(isset($register_username)) {echo $register_username;} ?>">
                     <small class="error"> <?php if(isset($register_username_error)) {echo $register_username_error;} ?> </small>
-                    <br> <br>
                 </div><!--end username-->
-                <div class="col-md-12"><!--password-->
+                <div class="col-md-12 my-3"><!--password-->
                     <label class="sr-only" for="password">Mot de passe</label>
                     <input type="password" class="form-control" name="password" placeholder="Mot de passe" value="<?php if(isset($register_password)) {echo $register_password;} ?>">
                     <small class="error"> <?php if(isset($register_password_error)) {echo $register_password_error;} ?> </small>
-                    <br> <br>
                 </div><!--end password-->
-                <div class="col-md-12"><!--confirm password-->
+                <div class="col-md-12 my-3"><!--confirm password-->
                     <label class="sr-only" for="confirm_password">Confirmez le mot de passe</label>
-                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirmez le mot de passe">
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirmez le mot de passe" value="<?php if(isset($register_confirm_password)) {echo $register_confirm_password;} ?>">
                     <small class="error"> <?php if(isset($register_confirm_password_error)) {echo $register_confirm_password_error;} ?> </small>
-                    <br> <br>
                 </div><!--end confirm password-->
-                <div class="col-12"><!--envoyer button-->
+                <div class="col-12 my-3"><!--envoyer button-->
                     <input class="btn btn-dark" type="submit" value="Envoyer" name="register">
                 </div><!--end envoyer button-->
-                <br>
                 <small id="pass_info" class="form-text"><sup>&lowast;</sup> Le mot de passe doit comporter au moins 8 caractères et doit inclure au moins
                     une lettre majuscule, un chiffre et un caractère spécial</small>
             </form><!--end registration form-->
