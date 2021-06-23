@@ -23,9 +23,9 @@ $db = connexionBase();
 
 function test_input($string)
 {
-    $string = strip_tags($string);
-    $string = trim($string);
-    $string = stripslashes($string);
+    //$string = strip_tags($string);
+    //$string = trim($string);
+    //$string = stripslashes($string);
     $string = htmlspecialchars($string);
 
     return $string;
@@ -36,7 +36,7 @@ function test_input($string)
 if(isset($_POST['register']))
 {
 
-    //The 'test_input' function validates and makes user input secure.
+    //The 'test_input' function validates and makes user inputs secure.
     //The 'password_hash' function hashes the password to make it secure
     //and unreadable in the database.
     $nom = test_input($_POST['nom']);
@@ -154,7 +154,7 @@ if(isset($_POST['register']))
     }
 
     //check if email already exists using the 'check_email_exists' function
-    //'return' prevents the following code being executed
+    //'return' prevents any following code being executed
     if(!check_email_exists($db, $email))
     {
         echo "Email already exists!";
@@ -163,13 +163,13 @@ if(isset($_POST['register']))
 
     //FUNCTION - insert_details() ----------------------------------------------------------------
     //Insert the details on the registration form into the database.
-    function insert_details($db, $nom, $prenom, $email, $username, $password, $date_inscrit, $date_dern_conn)
+    function insert_details($db, $nom, $prenom, $email, $username, $password, $date_inscrit, $date_dern_conn, $admin)
     {
         $query = $db->prepare("
     
-    INSERT INTO users(nom, prenom, email, username, password, date_inscrit, date_dern_conn)
+    INSERT INTO users(nom, prenom, email, username, password, date_inscrit, date_dern_conn, admin)
     
-    VALUES(:nom, :prenom, :email, :username, :password, :date_inscrit, :date_dern_conn)
+    VALUES(:nom, :prenom, :email, :username, :password, :date_inscrit, :date_dern_conn, :admin)
     
     ");
 
@@ -180,6 +180,7 @@ if(isset($_POST['register']))
         $query->bindParam(":password",       $password);
         $query->bindParam(":date_inscrit",   $date_inscrit);
         $query->bindParam(":date_dern_conn", $date_dern_conn);
+        $query->bindParam(":admin",          $admin);
 
         return $query->execute();
 
@@ -188,7 +189,7 @@ if(isset($_POST['register']))
     //Call the function 'insert_details' to INSERT the users details into the database.
     //Use an 'if' condition to check if the INSERT was successful.
     //If yes, bind the variable '$username' to the variable '$_SESSION'.
-    if(insert_details($db, $nom, $prenom, $email, $username, $password, $date_inscrit, $date_dern_conn));
+    if(insert_details($db, $nom, $prenom, $email, $username, $password, $date_inscrit, $date_dern_conn, $admin));
     {
         $_SESSION['username'] = $username;
         header("Location: ../views/client_home.php");
