@@ -11,7 +11,7 @@ if (file_exists("../controller/functions.php")) {
 $db = connexionBase();
 ?>
 
-<?= template_header("S'inscrire") ?>
+<?= template_header("Inscription") ?>
 
 <div class="row"><!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">

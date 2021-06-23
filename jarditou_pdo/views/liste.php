@@ -39,9 +39,10 @@ else
                 </div>
             </nav>
         </div><!--end navbar-->
-        <div class="row max-width"><!--promo banner -->
-            <img src="src/img/promotion.jpg" class="image-fluid w-100" alt="promotion" title="promotion">    
-        </div><!--end promo banner -->
+        <!--admin bar-->
+        <div class="row max-width">
+            <div class="p-2 bg-primary text-white col-12">Zone Administratif</div>
+        </div><!--end admin bar-->
 
         <?php
             //connect to the database
@@ -99,142 +100,121 @@ else
                 }
 
         ?>
-        <br>
-<!-- main ---------------------------------------------------------------------------------------->
-<main class="max-width">
-    <div class="row"><!--two columns in main-->
-        <!-- left column ------------------------------------------------------------------------->
-        <div id="left_column_accueil" class="col-12 col-sm-6 col-md-7 col-lg-8 col-xl-9">
-        <a href="form_ajout.php"><button class="btn btn-primary">Ajouter un article</button></a><!--Add button-->
-        <p id="tableau"></p>
-        <div class="table-responsive"><!--table-->
-        <table class="table table-hover table-bordered w-100 w-sm-50"> 
-            <thead>
-                <tr class="table-active">
-                <th>Photos</th>
-                <th>ID</th>
-                <th>Référence</th>
-                <th>Libellé</th>
-                <th>Prix</th>
-                <th>Stock</th>
-                <th>Couleur</th>
-                <th>Ajout</th>
-                <th>Modif</th>
-                <th>Bloqué</th>
-                </tr>   
-            </thead>
-            <tbody>
+        <!-- main ---------------------------------------------------------------------------------------->
+        <main class="max-width">
+            <div class="row"><!--two columns in main-->
+                <!-- left column ------------------------------------------------------------------------->
+                <div id="left_column_accueil" class="col-12 col-sm-6 col-md-7 col-lg-8 col-xl-9 border border-primary border-top-0 border-bottom-0 border-right-0">
+                <p id="tableau"></p>
+                <div class="table-responsive"><!--table-->
+                <table class="table table-hover table-bordered w-100 w-sm-50">
+                    <thead>
+                        <tr class="table-active">
+                        <th>Photos</th>
+                        <th>ID</th>
+                        <th>Référence</th>
+                        <th>Libellé</th>
+                        <th>Prix</th>
+                        <th>Stock</th>
+                        <th>Couleur</th>
+                        <th>Ajout</th>
+                        <th>Modif</th>
+                        <th>Bloqué</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            <?php
-
-                while ($row = $result->fetch(PDO::FETCH_OBJ)){     
-                    echo'<tr>';?>
-                    <!--photo-->
-                    <td class="table-warning"><img src="src/img/<?=$row->pro_id.".".$row->pro_photo;?>" alt="<?=$row->pro_id.".".$row->pro_photo;?>" width="100">.</td>
                     <?php
-                        //pro_id
-                        echo"<th>".$row->pro_id."</th>";
-                        //Référence
-                        echo"<th class='table-warning'>".$row->pro_ref."</th>";
-                        //Libellé column entry with clickable link to details.php
-                        echo '<th><a href="form_detail.php?pro_id='.$row->pro_id.'" title='.$row->pro_libelle.'>'.$row->pro_libelle.'</a></th>';
-                        //Prix
-                        echo"<th class='table-warning'>".$row->pro_prix."</th>";
-                        
-                        //Stock column entry using if loop to check stock levels
-                        if ($row->pro_stock == 0)  {
-                            echo"<th>"."Rupture de stock"."</th>";
-                            } else {
-                                echo"<th>".$row->pro_stock."</th>";
-                            }
-                        
-                        //Colour
-                        echo"<th class='table-warning'>".$row->pro_couleur."</th>";
-                        //Ajout
-                        echo"<th>".$row->pro_d_ajout."</th>";
-                        //Modif
-                        echo"<th class='table-warning'>".$row->pro_d_modif."</th>";
-                        
-                        //Display bloqué button if stock is blocked
-                        if ($row->pro_bloque == 1){   ?>
-                        <th>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Bloqué</button>
-                            <!--Modal informing user that they will be contacted when stock becomes available-->
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalCenterTitle">Produit Bloqué</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Nous vous tiendront informé sur les futurs disponibilités du produit.
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </th>
-                <?php   }
-                }
-                ?>
-            </tbody>        
-        </table>
-        </div> 
-        <!-- Navigation for pagination -->
-        <nav>
-            <ul class="pagination">
-                <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
-                <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">  <!--disabled pour desactivé le lien en page 1-->
-                    <a href="liste.php?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
-                </li>
-                <?php for($page = 1; $page <= $pages; $page++): ?>
-                    <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
-                    <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                        <a href="liste.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-                    </li>
-                <?php endfor ?>
-                <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
-                <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">  <!--disabled pour desactivé le lien en page maximum-->
-                    <a href="liste.php?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
-                </li>
-            </ul>
-        </nav>
-        </div><!--end left column------------------------------------------------------------------>
-        <!--right column--------------------------------------------------------------------------->
-        <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-primary text-white text-center p-3">
 
-            <h4 class="my-3">Bienvenue <?php echo $_SESSION['username'] ?> </h4>
-        </div><!--end right column---------------------------------------------------------------->
-    </div><!--end two columns in main------------------------------------------------------------->
-</main>
-        <!-- navbar -->
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-dark col-12">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                            <a class="nav-link text-white" href="views/mentions_legale.html">mentions légales</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link text-white" href="views/horaires.html">horaires</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link text-white" href="views/plan_du_site.html">plan du site</a>
-                            </li>
-                        </ul>
-                    </div>
+                        while ($row = $result->fetch(PDO::FETCH_OBJ)){
+                            echo'<tr>';?>
+                            <!--photo-->
+                            <td class="table-warning"><img src="src/img/<?=$row->pro_id.".".$row->pro_photo;?>" alt="<?=$row->pro_id.".".$row->pro_photo;?>" width="100">.</td>
+                            <?php
+                                //pro_id
+                                echo"<th>".$row->pro_id."</th>";
+                                //Référence
+                                echo"<th class='table-warning'>".$row->pro_ref."</th>";
+                                //Libellé column entry with clickable link to details.php
+                                echo '<th><a href="form_detail.php?pro_id='.$row->pro_id.'" title='.$row->pro_libelle.'>'.$row->pro_libelle.'</a></th>';
+                                //Prix
+                                echo"<th class='table-warning'>".$row->pro_prix."</th>";
+
+                                //Stock column entry using if loop to check stock levels
+                                if ($row->pro_stock == 0)  {
+                                    echo"<th>"."Rupture de stock"."</th>";
+                                    } else {
+                                        echo"<th>".$row->pro_stock."</th>";
+                                    }
+
+                                //Colour
+                                echo"<th class='table-warning'>".$row->pro_couleur."</th>";
+                                //Ajout
+                                echo"<th>".$row->pro_d_ajout."</th>";
+                                //Modif
+                                echo"<th class='table-warning'>".$row->pro_d_modif."</th>";
+
+                                //Display bloqué button if stock is blocked
+                                if ($row->pro_bloque == 1){   ?>
+                                <th>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Bloqué</button>
+                                    <!--Modal informing user that they will be contacted when stock becomes available-->
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">Produit Bloqué</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Nous vous tiendront informé sur les futurs disponibilités du produit.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </th>
+                        <?php   }
+                        }
+                        ?>
+                    </tbody>
+                </table>
                 </div>
-            </nav>
-        </div>
+                <!-- Navigation for pagination -->
+                <nav>
+                    <ul class="pagination">
+                        <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
+                        <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">  <!--disabled pour desactivé le lien en page 1-->
+                            <a href="liste.php?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
+                        </li>
+                        <?php for($page = 1; $page <= $pages; $page++): ?>
+                            <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
+                            <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                                <a href="liste.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+                            </li>
+                        <?php endfor ?>
+                        <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
+                        <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">  <!--disabled pour desactivé le lien en page maximum-->
+                            <a href="liste.php?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
+                        </li>
+                    </ul>
+                </nav>
+                </div><!--end left column------------------------------------------------------------------>
+                <!--right column--------------------------------------------------------------------------->
+                <div id="rightColumn" class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-light border border-primary border-top-0 border-bottom-0 text-center p-3">
+                    <h4 class="my-3">Bienvenue <?php echo $_SESSION['username'] ?> </h4>
+                    <a href="form_ajout.php"><button class="btn btn-primary">Ajouter un article</button></a><!--Add button-->
+                </div><!--end right column---------------------------------------------------------------->
+            </div><!--end two columns in main------------------------------------------------------------->
+        </main>
+    <!--admin bar-->
+    <div class="row max-width">
+        <div class="p-2 bg-primary text-white col-12">Zone Administratif</div>
+    </div><!--end admin bar-->
     <script src="JS_jarditou.js"></script>
     <!-- bootstrap Javascript -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
