@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ec825597-2929-4156-bb08-a5bca6c658e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/liste.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/liste.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../poo/classes/PersonnageDefault.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/../poo/classes/PersonnageDefault.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../poo/tests/PersonnageDefaultTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../poo/tests/PersonnageDefaultTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stage/lettre_d_motivation_houseman_daniel.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../stage/lettre_d_motivation_houseman_daniel.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stage/lettre_d_motivation_houseman_daniel.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../stage/lettre_d_motivation_houseman_daniel.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
       <updated>1623658072144</updated>
       <workItem from="1623658073686" duration="15997000" />
       <workItem from="1623697918085" duration="101821000" />
-      <workItem from="1624012070386" duration="16647000" />
+      <workItem from="1624012070386" duration="17937000" />
     </task>
     <servers />
   </component>
