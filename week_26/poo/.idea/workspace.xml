@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec825597-2929-4156-bb08-a5bca6c658e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../poo/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../poo/classes/PersonnageDefault.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/../poo/classes/PersonnageDefault.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../poo/tests/PersonnageDefaultTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../poo/tests/PersonnageDefaultTest.php" afterDir="false" />
+    <list default="true" id="21ea155a-bfd6-4931-889f-1b45967d9da6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../jarditou_pdo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jarditou_pdo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/PersonnageDefault.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/PersonnageDefault.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/PersonnageDefaultTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PersonnageDefaultTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tutorials/oop_tutorials/netninja_oop/.idea/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,12 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProblemsViewState">
-    <hideBySeverity>
-      <option value="15" />
-    </hideBySeverity>
-  </component>
-  <component name="ProjectId" id="1tvmjS3Js2qX1vv0abu2jaclwF4" />
+  <component name="ProjectId" id="1ukOahzRdPilugKAc5eNKcuvvNv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -33,36 +28,24 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/controller" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dan\Desktop\daniel_dwwm\daniel_dwwm\jarditou_pdo\controller" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ec825597-2929-4156-bb08-a5bca6c658e2" name="Default Changelist" comment="" />
-      <created>1623658072144</created>
+      <changelist id="21ea155a-bfd6-4931-889f-1b45967d9da6" name="Default Changelist" comment="" />
+      <created>1625206187104</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623658072144</updated>
-      <workItem from="1623658073686" duration="15997000" />
-      <workItem from="1623697918085" duration="101821000" />
-      <workItem from="1624012070386" duration="17938000" />
-      <workItem from="1625057961352" duration="754000" />
-      <workItem from="1625411741482" duration="599000" />
+      <updated>1625206187104</updated>
+      <workItem from="1625206188658" duration="6995000" />
     </task>
     <servers />
   </component>
