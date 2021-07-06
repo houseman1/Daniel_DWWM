@@ -25,115 +25,31 @@ the bank with mention of the amount.
     private $service;
     public $duree;
 
-    public function determine_duree($date_dembauche)
+    public function __construct($nom, $prenom, $date_dembauche, $poste, $salaire_brut, $service)
     {
-
-        $this->today = new DateTime();
+        $this->nom = $nom;
+        $this->prenom = $prenom;
         $this->date_dembauche = new DateTime($date_dembauche);
+        $this->poste = $poste;
+        $this->salaire_brut = $salaire_brut;
+        $this->service = $service;
+    }
+
+    public function determine_duree()
+    {
+        $this->today = new DateTime();
 
         $this->duree = $this->date_dembauche->diff($this->today);
         echo "The employee has been at the firm for " . $this->duree->y . " years";
 
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
+    public function
 
-    /**
-     * @return mixed
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDateDembauche()
-    {
-        return $this->date_dembauche;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPoste()
-    {
-        return $this->poste;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSalaireBrut()
-    {
-        return $this->salaire_brut;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getService()
-    {
-        return $this->service;
-    }
-
-    /**
-     * @param mixed $nom
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-    }
-
-    /**
-     * @param mixed $prenom
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-    }
-
-    /**
-     * @param mixed $date_dembauche
-     */
-    public function setDateDembauche($date_dembauche)
-    {
-        $this->date_dembauche = $date_dembauche;
-    }
-
-    /**
-     * @param mixed $poste
-     */
-    public function setPoste($poste)
-    {
-        $this->poste = $poste;
-    }
-
-    /**
-     * @param mixed $salaire_brut
-     */
-    public function setSalaireBrut($salaire_brut)
-    {
-        $this->salaire_brut = $salaire_brut;
-    }
-
-    /**
-     * @param mixed $service
-     */
-    public function setService($service)
-    {
-        $this->service = $service;
-    }
 }
 
-//Exercise 2
+//Exercise 2 result:
 //Displays how long the employee has been in the company.
-$employee_one = new Employe();
+//($nom, $prenom, $date_dembauche, $poste, $salaire_brut, $service)
+$employee_one = new Employe('Reeves', 'Vic', '2015-09-04', 'dev', '30000', 'informatique');
 $employee_one->determine_duree("2013-09-04");

@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="21ea155a-bfd6-4931-889f-1b45967d9da6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../jarditou_pdo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jarditou_pdo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/PersonnageDefault.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/PersonnageDefault.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/PersonnageDefaultTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PersonnageDefaultTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/oop_tutorials/netninja_oop/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Employe.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Employe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tutorials/oop_tutorials/netninja_oop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/oop_tutorials/netninja_oop/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,8 @@
       <option name="presentableId" value="Default" />
       <updated>1625206187104</updated>
       <workItem from="1625206188658" duration="6995000" />
+      <workItem from="1625411736834" duration="15687000" />
+      <workItem from="1625515560409" duration="2599000" />
     </task>
     <servers />
   </component>
