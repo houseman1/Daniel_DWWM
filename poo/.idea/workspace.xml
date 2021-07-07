@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21ea155a-bfd6-4931-889f-1b45967d9da6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../jarditou_pdo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jarditou_pdo/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="42f27dc5-9fbc-4767-b7ea-72c1aa461782" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Agence.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Agence.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Employe.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Employe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tutorials/oop_tutorials/netninja_oop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorials/oop_tutorials/netninja_oop/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +26,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProjectId" id="1ukOahzRdPilugKAc5eNKcuvvNv" />
+  <component name="ProjectId" id="1uyaUjomh4U9WJ9CpWS5FDEGrnP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -47,14 +47,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="21ea155a-bfd6-4931-889f-1b45967d9da6" name="Default Changelist" comment="" />
-      <created>1625206187104</created>
+      <changelist id="42f27dc5-9fbc-4767-b7ea-72c1aa461782" name="Default Changelist" comment="" />
+      <created>1625640301287</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1625206187104</updated>
-      <workItem from="1625206188658" duration="6995000" />
-      <workItem from="1625411736834" duration="15687000" />
-      <workItem from="1625515560409" duration="20212000" />
+      <updated>1625640301287</updated>
+      <workItem from="1625640302509" duration="17643000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,6 @@
 <?php
 
-
-class Employe extends Agence
+class Employe
 {
     private $nom;
     private $prenom;
@@ -10,8 +9,11 @@ class Employe extends Agence
     private $salaire_brut;
     private $service;
     public $today;
+    private $salaire_plus_primes;
+    private $duree;
+    private $ref_agence;
 
-    public function __construct($nom, $prenom, $date_dembauche, $poste, $salaire_brut, $service)
+    public function __construct($nom, $prenom, $date_dembauche, $poste, $salaire_brut, $service, $ref_agence)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -19,12 +21,13 @@ class Employe extends Agence
         $this->poste = $poste;
         $this->salaire_brut = $salaire_brut;
         $this->service = $service;
+        $this->ref_agence = $ref_agence;
     }
 
     public function __destruct()
     {
         // Uncomment the following line to test the bank transfer message automatically sent on the 30/11 of each year.
-        $this->today = new DateTime('2020-11-30');
+        //$this->today = new DateTime('2020-11-30');
 
         // Check if the day and month of the DateTime object are 30 and 11.
         // If so, display the bank transfer message.
@@ -35,6 +38,10 @@ class Employe extends Agence
         }
     }
 
+    public function agence()
+    {
+
+    }
 
     public function determine_duree()
     {
@@ -47,12 +54,12 @@ class Employe extends Agence
         // Calculate and display how many years if 'duree' is one year or more.
         if($this->duree->y < 1)
         {
-            if($this->duree->days = 1)
+            if($this->duree->days == 1)
             {
-                $this->d = "day.";
+                $this->d = " day.";
             } else
             {
-                $this->d = "days.";
+                $this->d = " days.";
             }
 
             echo $this->prenom . " " . $this->nom . " has been at the firm for "
@@ -89,26 +96,3 @@ class Employe extends Agence
     }
 
 }
-
-//Instanciate new employees
-$employee_one = new Employe('Christmas', 'Mary', '2000-09-04', 'Big Cheese', '50000', 'Board of Directors');
-$employee_two = new Employe('Time', 'Justin', '2003-09-04', 'Boss', "40000", 'Production');
-$employee_three = new Employe('Atoe', 'Tom', '2008-09-04', 'Gaffer', "30000", 'Production');
-$employee_four = new Employe('Cited', 'Felix', '2021-07-05', 'General Dogsbody', "10000", 'Production');
-$employee_five = new Employe('Banks', 'Robin', '2007-09-04', 'Accountant', "35000", 'Accounting');
-
-//Exercise 2 result:
-//Display how long the employee has been in the company.
-$employee_one->determine_duree();
-$employee_two->determine_duree();
-$employee_three->determine_duree();
-$employee_four->determine_duree();
-$employee_five->determine_duree();
-
-//Exercise 3 result:
-//Display the salary with bonuses
-$employee_one->determine_prime();
-$employee_two->determine_prime();
-$employee_three->determine_prime();
-$employee_four->determine_prime();
-$employee_five->determine_prime();

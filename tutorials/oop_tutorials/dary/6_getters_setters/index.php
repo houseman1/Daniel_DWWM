@@ -1,21 +1,17 @@
 <?php
 
-class Agence
+class User
 {
-    private $nom_agence;
-    private $adresse_agence;
-    private $code_postal_agence;
-    private $ville_agence;
+    private $name;
+    private $age;
 
-    public function __construct($nom_agence, $adresse_agence, $code_postal_agence, $ville_agence)
+    public function __construct($name, $age)
     {
-        $this->nom_agence = $nom_agence;
-        $this->adresse_agence = $adresse_agence;
-        $this->code_postal_agence = $code_postal_agence;
-        $this->ville_agence = $ville_agence;
+        $this->name = $name;
+        $this->age = $age;
     }
 
-    //__GET Magic Method - avoids creating a getter for each property
+   //__GET Magic Method
     //$property is defined in the __set() Magic Method
     public function __get($property)
     {
@@ -27,7 +23,6 @@ class Agence
         }
     }
 
-    //__SET Magic Method - avoids creating a setter for each property
     public function __set($property, $value)
     {
         //property_exists — Checks if the object or class has a property
@@ -40,4 +35,12 @@ class Agence
     }
 }
 
+// Instanciate the User class
+// Pass name and age parameters
+$user = new User('Dan', 50);
 
+// Change the name and age parameters using the '__set()' Magic Method
+$user->__set('name', 'Peter');
+
+// Display the name property using the '__get()' Magic Method
+echo $user->__get('name');
