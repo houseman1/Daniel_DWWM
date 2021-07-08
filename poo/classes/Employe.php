@@ -40,7 +40,9 @@ class Employe
 
     public function agence()
     {
-
+        echo $this->prenom." ".$this->nom." works at ".$this->ref_agence->nom_agence.", "
+            .$this->ref_agence->adresse_agence.", ".$this->ref_agence->ville_agence.", "
+            .$this->ref_agence->code_postal_agence.", "."<br>";
     }
 
     public function determine_duree()
@@ -93,6 +95,54 @@ class Employe
         echo "Employee Name: " . $this->prenom . " " . $this->nom . "<br>Gross salary before bonuses: "
             . $this->salaire_brut . "<br>5% Bonus: " . $this->prime . "<br>Seniority Bonus: "
             . $this->anciennete . "<br>Total Salary after Bonuses: " . $this->salaire_plus_primes . "<br><br>";
+    }
+
+    /**
+     * @param mixed $ref_agence
+     */
+    public function setRefAgence($ref_agence)
+    {
+        $this->ref_agence = $ref_agence;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRefAgence()
+    {
+        return $this->ref_agence;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param mixed $nom
+     */
+    public function setNom($nom): void
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param mixed $prenom
+     */
+    public function setPrenom($prenom): void
+    {
+        $this->prenom = $prenom;
     }
 
 }
