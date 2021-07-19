@@ -1,0 +1,9 @@
+# Rewrite everything from the 'public' folder to the 'public' url
+# Réécrivez tout du dossier 'public' à l'url 'public'
+# If 'public' is ommitted from the url, the user will still be redirected to 'index.php'
+# Si 'public' est omis de l'url, l'utilisateur sera toujours redirigé vers 'index.php'
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteRule ^$ public/ [L]
+  RewriteRule (.*) public/$1 [L]
+</IfModule>

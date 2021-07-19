@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#section-landing {
+    background-size: cover;
+    background: url('../img/tree.jpg') no-repeat center;
+    height: 100%;
+    width: 100%;
+}
+
+#section-landing .top-nav {
+    display: block;
+}
+
+#section-landing .top-nav ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 6%;
+    top: 2%;
+}
+
+#section-landing .top-nav ul li {
+    display: inline-block;
+    margin-left: 28px;
+}
+
+#section-landing .top-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#section-landing .top-nav ul li a:hover {
+    color: #afafaf;
+    transition: 0.15s ease-in;
+}
+

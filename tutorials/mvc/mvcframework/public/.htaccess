@@ -1,0 +1,15 @@
+# Check if the 'mod_rewrite' module is enabled
+    # Vérifiez si le module 'mod_rewrite' est activé
+# If the page demanded in the url does not exist, rewrite to 'index.php' in the public folder
+    # Si la page demandée dans l'url n'existe pas, rediriger vers 'index.php' dans le dossier public
+# 'RewriteBase' needs to be changed if the core folder name changes
+    # 'RewriteBase' doit être modifié si le nom du dossier principal change
+
+<IfModule mod_rewrite.c>
+   Options -Multiviews
+   RewriteEngine On
+   RewriteBase /tutorials/mvc/mvcframework/public
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+ </IfModule>

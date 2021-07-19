@@ -1,0 +1,8 @@
+# Forbid access to the 'app' folder
+# Interdire l'accès au dossier 'app'
+
+Options -Indexes
+
+# Allow access to the 'app' folder
+# Autoriser l'accès au dossier 'app'
+# Options +Indexes
