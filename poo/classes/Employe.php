@@ -22,6 +22,7 @@ class Employe
         $this->salaire_brut = $salaire_brut;
         $this->service = $service;
         $this->ref_agence = $ref_agence;
+
     }
 
     public function __destruct()
@@ -40,6 +41,7 @@ class Employe
 
     public function agence()
     {
+        //var_dump($this);
         echo $this->prenom." ".$this->nom." works at ".$this->ref_agence->nom_agence.", "
             .$this->ref_agence->adresse_agence.", ".$this->ref_agence->ville_agence.", "
             .$this->ref_agence->code_postal_agence.", "."<br>";
@@ -97,6 +99,14 @@ class Employe
             . $this->anciennete . "<br>Total Salary after Bonuses: " . $this->salaire_plus_primes . "<br><br>";
     }
 
+    public function resto(){
+        if ($this->resto_agence) {
+            echo $this->prenom . " " . $this->nom . " receives restaurant vouchers.<br>";
+        } else {
+            echo $this->prenom . " " . $this->nom . " uses the onsite company restaurant.<br>";
+        }
+    }
+
     /**
      * @param mixed $ref_agence
      */
@@ -143,6 +153,14 @@ class Employe
     public function setPrenom($prenom): void
     {
         $this->prenom = $prenom;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRestoAgence()
+    {
+        return $this->resto_agence;
     }
 
 }

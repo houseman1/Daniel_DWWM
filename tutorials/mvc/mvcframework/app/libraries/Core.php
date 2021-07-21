@@ -1,6 +1,8 @@
 <?php
 
-    # Core App Class
+    # App Core Class
+    # Creates URL & loads core controller
+    # URL FORMAT - /controller/method/params
 
     class Core {
 
@@ -13,18 +15,24 @@
         # In the controller 'Pages', the 'index' method will be loaded
         # Dans le contrôleur 'Pages', la méthode 'index' sera chargée
         protected $currentMethod = 'index';
+
         protected $params = [];
 
         public function __construct() {
+            # print_r($this->getUrl();
+
             $url = $this->getUrl();
+            var_dump($url);
+
             # Look inside the 'controllers' folder for the first value
             # Regardez dans le dossier 'controller' pour la première valeur
             # 'ucwords' will capitalise the first letter
             # 'ucwords' mettra la première lettre en majuscule
             if(file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
-                # Set a new controller
+                # If exists, set as controller
                 # Définir un nouveau contrôleur
                 $this->currentController = ucwords($url[0]);
+                # Unset 0 index
                 unset($url[0]);
             }
 
@@ -38,8 +46,10 @@
 
             # Check for the second part of the URL
             if(isset($url[1])) {
+                # Check to see if the method exists in controller
                 if(method_exists($this->currentController, $url[1])) {
                     $this->currentMethod = $url[1];
+                    # Unset 1 index
                     unset($url[1]);
                 }
             }

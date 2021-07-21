@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="745ce93e-e635-4212-bb72-3b3e7b44cfeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/.idea/mvcframework.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/app/libraries/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/app/libraries/Core.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/app/libraries/Database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/public/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tutorials/mvcframework/public/javascript/javascript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/untitled.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agence.php" beforeDir="false" afterPath="$PROJECT_DIR$/Agence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Employe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tutorials/mvc/mvcframework/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../tutorials/mvc/mvcframework/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tutorials/mvc/mvcframework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../tutorials/mvc/mvcframework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tutorials/mvc/mvcframework/app/libraries/Core.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../tutorials/mvc/mvcframework/app/libraries/Core.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
