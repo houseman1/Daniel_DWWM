@@ -1,4 +1,33 @@
-------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+---remove public and index from URL------------------------------------------------------------------------------
+
+
+Copy and paste 'htaccess' and 'index.php' from 'app/Views' into the root 'project_root'
+
+In app/Config/App.php
+
+Remove
+../
+from
+$pathsConfig = FCPATH . '../app/Config/Paths.php';
+($pathsConfig = FCPATH . '../app/Config/Paths.php';)
+
+Remove
+index.php
+from
+public $indexPage = 'index.php';
+(public $indexPage = '';)
+
+If any additional problems arise try changing
+public $uriProtocol = 'REQUEST_URI';
+to
+public $uriProtocol = 'QUERY_STRING';
+or
+public $uriProtocol = 'PATH_INFO';
+
+
+
+-----------------------------------------------------------------------------------------------------------------
 ---app/Controllers/Home.php
 
 When we go to the root of the site, the framework executes the 'index()' method inside the class 'Home'
@@ -36,5 +65,25 @@ example.com/class/method/ID
 We configure routes in the 'app/Config/Routes.php' configuration file.
 
 -------------------------------------------------------------------------------------------------------------------
----app/Controllers/Tasks.php (added by me)-------------------------------------------------------------------------
+---View partials---------------------------------------------------------------------------------------------------
 
+app/Controllers/Tasks.php (added by me)
+
+View partials are view files that contain content that can be reused from view to view.
+When using view layouts you must use '$this->include()'
+
+<?= $this->include("header") ?>
+
+If views are shared by every page it is better to use:
+
+------------------------------------------------------------------------------------------------------------------
+---View layouts---------------------------------------------------------------------------------------------------
+
+app/Views/layouts/default.php (added by me)
+
+View layouts allow us to create views that can extend, much like a class extending another.
+So we can have a base view that contains common code.
+Any view that wants to include this common code simply extends the layout view.
+
+Only one piece of code.
+Reduces coding and maintenance.
