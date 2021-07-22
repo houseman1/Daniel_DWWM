@@ -1,0 +1,18 @@
+<!-- It is good practice to create a subfolder for each controller's views.
+Therefore 'Home.php' in the 'app/Controllers' folder has a folder 'Home' in the 'Views' folder.
+
+It is also good practice to match the name of the view file to the name of the method in the controller.
+Therefore the 'index()' method in 'Home.php' has a corresponding 'index.php' file in the 'Views/Home' folder. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+    <h1>Welcome</h1>
+
+</body>
+</html>
