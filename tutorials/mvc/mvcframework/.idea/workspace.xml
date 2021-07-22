@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c067c6b-f607-4442-9169-9e40e300edb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../ci4/project_root/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ci4/project_root/app/Views/layouts/default.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ci4/project_root/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ci4/project_root/app/Config/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ci4/project_root/app/Config/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ci4/project_root/app/Controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ci4/project_root/app/Controllers/Home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../ci4/project_root/app/Views/Home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ci4/project_root/app/Views/Home/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ci4/project_root/app/Views/Tasks/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ci4/project_root/app/Views/Tasks/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ci4/project_root/myNotes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ci4/project_root/myNotes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

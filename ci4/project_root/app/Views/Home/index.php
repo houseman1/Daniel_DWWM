@@ -1,12 +1,13 @@
 <!-- It is good practice to create a subfolder for each controller's views.
-Therefore 'Home.php' in the 'app/Controllers' folder has a folder 'Home' in the 'Views' folder.
+Therefore 'Home.php' in the 'app/Controllers' folder has a corresponding folder 'Home' in the 'Views' folder.
 
 It is also good practice to match the name of the view file to the name of the method in the controller.
 Therefore the 'index()' method in 'Home.php' has a corresponding 'index.php' file in the 'Views/Home' folder.
 
 View partials are view files that contain content that can be reused from view to view.
 When using view layouts you must use '$this->include()'
-<?php //   <?= $this->include("header") ?>?>
+e.g.<?php //   <?= $this->include("header") ?>?>
+But, because multiple views will use the same header code it is better to use a view layout.
 
 To use a view layout (see app/Views/layouts/default.php) we call the 'extend()' method passing in the path
 to the view template.
